@@ -2,7 +2,7 @@
 
 Code, frozen outputs, prespecification documents and reproducibility metadata for the manuscript:
 
-**Convergent molecular space with residual syndrome differentiation: structural calibration and evidence boundaries of treatment-knowledge-derived inference**
+**Structural calibration and evidence boundary analysis reveal convergent molecular space with residual syndrome differentiation in treatment knowledge derived inference**
 
 ## Repository status
 
