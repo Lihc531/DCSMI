@@ -1,0 +1,9 @@
+﻿check,status,details
+target_projection_clean_rerun,PASS,"Bundled HERB_TARGET_LONG_TABLE.xlsx + frozen syndrome-herb weights reproduced syndrome_target_projection_summary, LOPO_FROZEN target weights, canonical pairs and target ubiquity exactly/numerically within 1e-12."
+psoriasis_runner_code_hash,PASS,Runner SHA256 384a6fdba1532bd08a40c7d4155afa230f7d58e558ff3b0fb3d34516fdf6a799 matches CODE_FREEZE_MANIFEST v1.0.1.
+psoriasis_primary_disease_input,PASS,ENDPOINT_RUN_MANIFEST disease SHA256 matches GSE147339_psoriasis_vs_control_ALL_GENES.csv; two-cohort background is secondary stress test.
+URTI_final_generator_presence,PARTIALLY_RECONSTRUCTED,Historical generator/raw GSE63990/patient matrix remain absent. Exact replay reconstruction reproduces all independently identifiable endpoint fields within 1e-10; full functional reimplementation is supplied but historical null/bootstrap byte equivalence is not claimed.
+global_P1_Holm_reconstruction,PASS,"Five-test Family A reconstruction yields Holm-adjusted p=1.0 for all five tests, consistent with manuscript-facing values."
+URTI_endpoint_replay_reconstruction,PASS,"Reconstructed Aplus, syndrome-only baseline, P1 observed/P, P2 delta and 95% CI all match frozen endpoint table within absolute error 1e-10."
+URTI_partial_disease_D_identifiability,PASS_WITH_LIMITATION,34/50 disease Hallmark D components are exactly identifiable from frozen Mtilde/Aplus/compatibility R; 16/50 remain unidentifiable because observed Aplus is zero for both syndromes.
+URTI_functional_reimplementation_smoke_test,PASS,Full reconstructed runner compiles and completes a smoke test with compatible substitute disease input plus frozen O/bootstrap replay; exact historical equivalence awaits missing raw inputs.

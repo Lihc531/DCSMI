@@ -1,0 +1,19 @@
+{
+  "status": "RECONSTRUCTED_FROM_FROZEN_INPUTS_AND_OUTPUTS_NOT_HISTORICAL_EXECUTION_SCRIPT",
+  "seed": 20260922,
+  "N_structural_null_for_Aplus_reconstruction": 10000,
+  "P1_null_source": "frozen distribution supplied as input; not regenerated",
+  "P2_bootstrap_source": "frozen distribution supplied as input; not regenerated",
+  "P3": "NOT_IDENTIFIABLE_NOT_TESTED per frozen pre-result amendment",
+  "inputs_sha256": {
+    "prior": "3772b10f65acb69a495f52b779ed971bb7ba8f559f5ace7d7efc804eb023c72f",
+    "strata": "a3871d4da3b3f4005833875f4e8d7c11e529214f6f93a95255f5acc5fffef297",
+    "hallmark": "b79e465ab414067ee911319e846a1a2a3b06bcc389e48fd7f39894724b3e7ac5",
+    "mtilde": "c60586009ecdf29d4120961ff53b1bcd9a57341defd508b2e84abfaf49394f15",
+    "observed_o": "9c36c155129d914e4516586c51f3db58d7a37f21910217b562c5c66bf38f6898",
+    "p1_null": "c50f3209a45cb7a09a70907b6b4034d723a6216d865b3b39b57b33580b76ed59",
+    "p2_bootstrap": "5e1c2712655a290332a2789a7300a0ebf4d5143cc3442229b788f6e1b4b7c7b5",
+    "reference_endpoints_QA_only": "5dbf1eb4cc2f7246b4e6aa95b0a9d1e94e3fb1114fc8ba825a72c4267fe4d2d8"
+  },
+  "qa_all_pass_1e-10": true
+}

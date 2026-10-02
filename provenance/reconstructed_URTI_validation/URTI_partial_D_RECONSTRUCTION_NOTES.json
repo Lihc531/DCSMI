@@ -1,0 +1,10 @@
+{
+  "status": "FORENSIC_RECONSTRUCTION_NOT_HISTORICAL_CODE",
+  "n_hallmarks_total": 50,
+  "n_identifiable": 34,
+  "n_unidentifiable": 16,
+  "known_D_l2_norm_squared": 0.6294617460327686,
+  "unidentified_D_l2_norm_squared_total": 0.3705382539672314,
+  "max_cross_syndrome_D_disagreement": 9.076073226310655e-15,
+  "implication": "P1 observed/Mtilde can be audited, but the historical P1 null cannot be regenerated exactly without the missing full GSE63990-derived D vector because null Aplus may load Hallmarks that are zero in both observed syndrome Aplus profiles."
+}
