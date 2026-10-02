@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+outputs/*
+!outputs/README.md
+external_data/*
+!external_data/README.md
+*.Rhistory
+.Rproj.user/
