@@ -1,0 +1,50 @@
+{
+  "analysis_name": "Syndrome-Herb Evidence Weighting Rule v1.0",
+  "status": "FROZEN",
+  "created_utc": "2026-09-20T16:08:25Z",
+  "canonical_workbook": "E:\\00project\\Tanre Yongfei\\重构\\canonical_prescription_tables_v1.1.xlsx",
+  "canonical_workbook_sha256": "39c9aeb25e576baa7a32b880cc8856be38942e9d178b86af598dff0ea9fd7d43",
+  "output_directory": "E:\\00project\\Tanre Yongfei\\重构\\04_frozen_syndrome_herb_weights_v1_0",
+  "syndromes": [
+    "PDOL",
+    "PHOL",
+    "WHIL"
+  ],
+  "primary_weight_rule": "W_hs = (m_hs + 0.5) / (M_s + 1)",
+  "evidence_unit": "independent article_id",
+  "beta_prior": {
+    "alpha": 0.5,
+    "beta": 0.5,
+    "name": "Jeffreys Beta(0.5, 0.5)"
+  },
+  "primary_composition_evidence": [
+    "D"
+  ],
+  "primary_syndrome_tiers": [
+    "A",
+    "B"
+  ],
+  "positive_herb_roles": [
+    "base",
+    "conditional_addition"
+  ],
+  "conditional_additions_pre_downweighted": false,
+  "unspecified_modifications_invented": false,
+  "GAT_used_in_primary_weight": false,
+  "specificity_used_in_primary_weight": false,
+  "lambda": 0.0,
+  "CAP_transcriptomics_used": false,
+  "FULL_definition": "all eligible primary articles",
+  "LOPO_definition": "all pneumonia/CAP articles excluded before constructing article-balanced syndrome-herb evidence",
+  "herb_universe_definition": "canonical herbs observed in at least one eligible FULL primary relation; same universe retained for FULL and LOPO comparison",
+  "complete_matrix_note": "m=0 herb-syndrome pairs are retained only for aligned mathematical comparison/decomposition; downstream observed positive relations must use the *_observed_v1_0.csv files.",
+  "random_seed": 20260920,
+  "counts": {
+    "FULL_unique_articles": 155,
+    "LOPO_unique_articles": 109,
+    "excluded_pneumonia_articles": 46,
+    "frozen_herb_universe": 194,
+    "FULL_observed_herb_syndrome_pairs": 350,
+    "LOPO_observed_herb_syndrome_pairs": 312
+  }
+}

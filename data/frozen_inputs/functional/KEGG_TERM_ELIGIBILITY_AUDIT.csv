@@ -1,0 +1,312 @@
+family,term_id,term_name,n_frozen_targets,broad_gt50pct,primary_eligible
+KEGG,hsa01100,Metabolic pathways,98,False,True
+KEGG,hsa04080,Neuroactive ligand-receptor interaction,71,False,True
+KEGG,hsa04082,Neuroactive ligand signaling,60,False,True
+KEGG,hsa05200,Pathways in cancer,58,False,True
+KEGG,hsa04020,Calcium signaling pathway,42,False,True
+KEGG,hsa05417,Lipid and atherosclerosis,38,False,True
+KEGG,hsa04024,cAMP signaling pathway,37,False,True
+KEGG,hsa04151,PI3K-Akt signaling pathway,36,False,True
+KEGG,hsa05207,Chemical carcinogenesis - receptor activation,36,False,True
+KEGG,hsa05022,Pathways of neurodegeneration - multiple diseases,34,False,True
+KEGG,hsa04726,Serotonergic synapse,32,False,True
+KEGG,hsa04010,MAPK signaling pathway,31,False,True
+KEGG,hsa05208,Chemical carcinogenesis - reactive oxygen species,31,False,True
+KEGG,hsa04081,Hormone signaling,30,False,True
+KEGG,hsa05010,Alzheimer disease,27,False,True
+KEGG,hsa05206,MicroRNAs in cancer,27,False,True
+KEGG,hsa04072,Phospholipase D signaling pathway,26,False,True
+KEGG,hsa05205,Proteoglycans in cancer,26,False,True
+KEGG,hsa05215,Prostate cancer,25,False,True
+KEGG,hsa05161,Hepatitis B,24,False,True
+KEGG,hsa04014,Ras signaling pathway,23,False,True
+KEGG,hsa04022,cGMP-PKG signaling pathway,23,False,True
+KEGG,hsa04510,Focal adhesion,23,False,True
+KEGG,hsa05167,Kaposi sarcoma-associated herpesvirus infection,23,False,True
+KEGG,hsa04015,Rap1 signaling pathway,22,False,True
+KEGG,hsa04066,HIF-1 signaling pathway,22,False,True
+KEGG,hsa01522,Endocrine resistance,21,False,True
+KEGG,hsa04517,IgSF CAM signaling,21,False,True
+KEGG,hsa04725,Cholinergic synapse,21,False,True
+KEGG,hsa04915,Estrogen signaling pathway,21,False,True
+KEGG,hsa01521,EGFR tyrosine kinase inhibitor resistance,20,False,True
+KEGG,hsa04062,Chemokine signaling pathway,20,False,True
+KEGG,hsa04148,Efferocytosis,20,False,True
+KEGG,hsa04613,Neutrophil extracellular trap formation,20,False,True
+KEGG,hsa04933,AGE-RAGE signaling pathway in diabetic complications,20,False,True
+KEGG,hsa05131,Shigellosis,20,False,True
+KEGG,hsa05170,Human immunodeficiency virus 1 infection,20,False,True
+KEGG,hsa05203,Viral carcinogenesis,20,False,True
+KEGG,hsa05418,Fluid shear stress and atherosclerosis,20,False,True
+KEGG,hsa04068,FoxO signaling pathway,19,False,True
+KEGG,hsa04071,Sphingolipid signaling pathway,19,False,True
+KEGG,hsa04728,Dopaminergic synapse,19,False,True
+KEGG,hsa04919,Thyroid hormone signaling pathway,19,False,True
+KEGG,hsa05132,Salmonella infection,19,False,True
+KEGG,hsa05145,Toxoplasmosis,19,False,True
+KEGG,hsa05415,Diabetic cardiomyopathy,19,False,True
+KEGG,hsa04519,Cadherin signaling,18,False,True
+KEGG,hsa04722,Neurotrophin signaling pathway,18,False,True
+KEGG,hsa04810,Regulation of actin cytoskeleton,18,False,True
+KEGG,hsa04926,Relaxin signaling pathway,18,False,True
+KEGG,hsa05135,Yersinia infection,18,False,True
+KEGG,hsa05163,Human cytomegalovirus infection,18,False,True
+KEGG,hsa05165,Human papillomavirus infection,18,False,True
+KEGG,hsa05166,Human T-cell leukemia virus 1 infection,18,False,True
+KEGG,hsa05171,Coronavirus disease,18,False,True
+KEGG,hsa00590,Arachidonic acid metabolism,17,False,True
+KEGG,hsa04140,Autophagy - animal,17,False,True
+KEGG,hsa04210,Apoptosis,17,False,True
+KEGG,hsa04270,Vascular smooth muscle contraction,17,False,True
+KEGG,hsa04660,T cell receptor signaling pathway,17,False,True
+KEGG,hsa04668,TNF signaling pathway,17,False,True
+KEGG,hsa04931,Insulin resistance,17,False,True
+KEGG,hsa05204,Chemical carcinogenesis - DNA adducts,17,False,True
+KEGG,hsa05225,Hepatocellular carcinoma,17,False,True
+KEGG,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer,17,False,True
+KEGG,hsa00140,Steroid hormone biosynthesis,16,False,True
+KEGG,hsa04520,Adherens junction,16,False,True
+KEGG,hsa04540,Gap junction,16,False,True
+KEGG,hsa04630,JAK-STAT signaling pathway,16,False,True
+KEGG,hsa04724,Glutamatergic synapse,16,False,True
+KEGG,hsa04750,Inflammatory mediator regulation of TRP channels,16,False,True
+KEGG,hsa05034,Alcoholism,16,False,True
+KEGG,hsa05152,Tuberculosis,16,False,True
+KEGG,hsa05162,Measles,16,False,True
+KEGG,hsa05169,Epstein-Barr virus infection,16,False,True
+KEGG,hsa05202,Transcriptional misregulation in cancer,16,False,True
+KEGG,hsa05220,Chronic myeloid leukemia,16,False,True
+KEGG,hsa05224,Breast cancer,16,False,True
+KEGG,hsa05230,Central carbon metabolism in cancer,16,False,True
+KEGG,hsa00980,Metabolism of xenobiotics by cytochrome P450,15,False,True
+KEGG,hsa00982,Drug metabolism - cytochrome P450,15,False,True
+KEGG,hsa04012,ErbB signaling pathway,15,False,True
+KEGG,hsa04261,Adrenergic signaling in cardiomyocytes,15,False,True
+KEGG,hsa04657,IL-17 signaling pathway,15,False,True
+KEGG,hsa04723,Retrograde endocannabinoid signaling,15,False,True
+KEGG,hsa04910,Insulin signaling pathway,15,False,True
+KEGG,hsa04912,GnRH signaling pathway,15,False,True
+KEGG,hsa04914,Progesterone-mediated oocyte maturation,15,False,True
+KEGG,hsa04917,Prolactin signaling pathway,15,False,True
+KEGG,hsa04932,Non-alcoholic fatty liver disease,15,False,True
+KEGG,hsa04935,"Growth hormone synthesis, secretion and action",15,False,True
+KEGG,hsa05164,Influenza A,15,False,True
+KEGG,hsa05212,Pancreatic cancer,15,False,True
+KEGG,hsa05223,Non-small cell lung cancer,15,False,True
+KEGG,hsa05226,Gastric cancer,15,False,True
+KEGG,hsa04218,Cellular senescence,14,False,True
+KEGG,hsa04360,Axon guidance,14,False,True
+KEGG,hsa04380,Osteoclast differentiation,14,False,True
+KEGG,hsa04620,Toll-like receptor signaling pathway,14,False,True
+KEGG,hsa04621,NOD-like receptor signaling pathway,14,False,True
+KEGG,hsa04625,C-type lectin receptor signaling pathway,14,False,True
+KEGG,hsa05020,Prion disease,14,False,True
+KEGG,hsa05160,Hepatitis C,14,False,True
+KEGG,hsa05221,Acute myeloid leukemia,14,False,True
+KEGG,hsa04518,Integrin signaling,13,False,True
+KEGG,hsa04611,Platelet activation,13,False,True
+KEGG,hsa04659,Th17 cell differentiation,13,False,True
+KEGG,hsa04664,Fc epsilon RI signaling pathway,13,False,True
+KEGG,hsa04921,Oxytocin signaling pathway,13,False,True
+KEGG,hsa04936,Alcoholic liver disease,13,False,True
+KEGG,hsa04976,Bile secretion,13,False,True
+KEGG,hsa05016,Huntington disease,13,False,True
+KEGG,hsa05031,Amphetamine addiction,13,False,True
+KEGG,hsa05130,Pathogenic Escherichia coli infection,13,False,True
+KEGG,hsa05168,Herpes simplex virus 1 infection,13,False,True
+KEGG,hsa05222,Small cell lung cancer,13,False,True
+KEGG,hsa00910,Nitrogen metabolism,12,False,True
+KEGG,hsa04110,Cell cycle,12,False,True
+KEGG,hsa04145,Phagocytosis,12,False,True
+KEGG,hsa04370,VEGF signaling pathway,12,False,True
+KEGG,hsa04550,Signaling pathways regulating pluripotency of stem cells,12,False,True
+KEGG,hsa04928,"Parathyroid hormone synthesis, secretion and action",12,False,True
+KEGG,hsa05012,Parkinson disease,12,False,True
+KEGG,hsa05214,Glioma,12,False,True
+KEGG,hsa05231,Choline metabolism in cancer,12,False,True
+KEGG,hsa01524,Platinum drug resistance,11,False,True
+KEGG,hsa04064,NF-kappa B signaling pathway,11,False,True
+KEGG,hsa04150,mTOR signaling pathway,11,False,True
+KEGG,hsa04152,AMPK signaling pathway,11,False,True
+KEGG,hsa04217,Necroptosis,11,False,True
+KEGG,hsa04650,Natural killer cell mediated cytotoxicity,11,False,True
+KEGG,hsa04720,Long-term potentiation,11,False,True
+KEGG,hsa04913,Ovarian steroidogenesis,11,False,True
+KEGG,hsa04923,Regulation of lipolysis in adipocytes,11,False,True
+KEGG,hsa04934,Cushing syndrome,11,False,True
+KEGG,hsa05014,Amyotrophic lateral sclerosis,11,False,True
+KEGG,hsa05142,Chagas disease,11,False,True
+KEGG,hsa05210,Colorectal cancer,11,False,True
+KEGG,hsa05211,Renal cell carcinoma,11,False,True
+KEGG,hsa05218,Melanoma,11,False,True
+KEGG,hsa05219,Bladder cancer,11,False,True
+KEGG,hsa00830,Retinol metabolism,10,False,True
+KEGG,hsa03320,PPAR signaling pathway,10,False,True
+KEGG,hsa04141,Protein processing in endoplasmic reticulum,10,False,True
+KEGG,hsa04310,Wnt signaling pathway,10,False,True
+KEGG,hsa04662,B cell receptor signaling pathway,10,False,True
+KEGG,hsa04666,Fc gamma R-mediated phagosome formation,10,False,True
+KEGG,hsa04713,Circadian entrainment,10,False,True
+KEGG,hsa04742,Taste transduction,10,False,True
+KEGG,hsa04930,Type II diabetes mellitus,10,False,True
+KEGG,hsa05030,Cocaine addiction,10,False,True
+KEGG,hsa05120,Epithelial cell signaling in Helicobacter pylori infection,10,False,True
+KEGG,hsa05140,Leishmaniasis,10,False,True
+KEGG,hsa05213,Endometrial cancer,10,False,True
+KEGG,hsa00591,Linoleic acid metabolism,9,False,True
+KEGG,hsa00983,Drug metabolism - other enzymes,9,False,True
+KEGG,hsa04114,Oocyte meiosis,9,False,True
+KEGG,hsa04211,Longevity regulating pathway,9,False,True
+KEGG,hsa04213,Longevity regulating pathway - multiple species,9,False,True
+KEGG,hsa04371,Apelin signaling pathway,9,False,True
+KEGG,hsa04670,Leukocyte transendothelial migration,9,False,True
+KEGG,hsa04920,Adipocytokine signaling pathway,9,False,True
+KEGG,hsa04929,GnRH secretion,9,False,True
+KEGG,hsa04970,Salivary secretion,9,False,True
+KEGG,hsa05017,Spinocerebellar ataxia,9,False,True
+KEGG,hsa05146,Amoebiasis,9,False,True
+KEGG,hsa00380,Tryptophan metabolism,8,False,True
+KEGG,hsa04144,Endocytosis,8,False,True
+KEGG,hsa04730,Long-term depression,8,False,True
+KEGG,hsa04916,Melanogenesis,8,False,True
+KEGG,hsa04960,Aldosterone-regulated sodium reabsorption,8,False,True
+KEGG,hsa04973,Carbohydrate digestion and absorption,8,False,True
+KEGG,hsa05032,Morphine addiction,8,False,True
+KEGG,hsa05134,Legionellosis,8,False,True
+KEGG,hsa00790,Folate biosynthesis,7,False,True
+KEGG,hsa01240,Biosynthesis of cofactors,7,False,True
+KEGG,hsa04137,Mitophagy - animal,7,False,True
+KEGG,hsa04530,Tight junction,7,False,True
+KEGG,hsa04922,Glucagon signaling pathway,7,False,True
+KEGG,hsa04924,Renin secretion,7,False,True
+KEGG,hsa04981,Folate transport and metabolism,7,False,True
+KEGG,hsa05133,Pertussis,7,False,True
+KEGG,hsa00230,Purine metabolism,6,False,True
+KEGG,hsa00330,Arginine and proline metabolism,6,False,True
+KEGG,hsa00350,Tyrosine metabolism,6,False,True
+KEGG,hsa00760,Nicotinate and nicotinamide metabolism,6,False,True
+KEGG,hsa04622,RIG-I-like receptor signaling pathway,6,False,True
+KEGG,hsa04658,Th1 and Th2 cell differentiation,6,False,True
+KEGG,hsa04925,Aldosterone synthesis and secretion,6,False,True
+KEGG,hsa04972,Pancreatic secretion,6,False,True
+KEGG,hsa05321,Inflammatory bowel disease,6,False,True
+KEGG,hsa05323,Rheumatoid arthritis,6,False,True
+KEGG,hsa00052,Galactose metabolism,5,False,True
+KEGG,hsa00500,Starch and sucrose metabolism,5,False,True
+KEGG,hsa01523,Antifolate resistance,5,False,True
+KEGG,hsa03083,Polycomb repressive complex,5,False,True
+KEGG,hsa03410,Base excision repair,5,False,True
+KEGG,hsa04146,Peroxisome,5,False,True
+KEGG,hsa04330,Notch signaling pathway,5,False,True
+KEGG,hsa04350,TGF-beta signaling pathway,5,False,True
+KEGG,hsa04612,Antigen processing and presentation,5,False,True
+KEGG,hsa04727,GABAergic synapse,5,False,True
+KEGG,hsa04911,Insulin secretion,5,False,True
+KEGG,hsa04971,Gastric acid secretion,5,False,True
+KEGG,hsa05033,Nicotine addiction,5,False,True
+KEGG,hsa05100,Bacterial invasion of epithelial cells,5,False,True
+KEGG,hsa05216,Thyroid cancer,5,False,True
+KEGG,hsa00260,"Glycine, serine and threonine metabolism",4,False,False
+KEGG,hsa00310,Lysine degradation,4,False,False
+KEGG,hsa00360,Phenylalanine metabolism,4,False,False
+KEGG,hsa00480,Glutathione metabolism,4,False,False
+KEGG,hsa00561,Glycerolipid metabolism,4,False,False
+KEGG,hsa02010,ABC transporters,4,False,False
+KEGG,hsa03250,Viral life cycle - HIV-1,4,False,False
+KEGG,hsa04115,p53 signaling pathway,4,False,False
+KEGG,hsa04142,Lysosome biogenesis,4,False,False
+KEGG,hsa04215,Apoptosis - multiple species,4,False,False
+KEGG,hsa04610,Complement and coagulation cascades,4,False,False
+KEGG,hsa04640,Hematopoietic cell lineage,4,False,False
+KEGG,hsa04714,Thermogenesis,4,False,False
+KEGG,hsa04721,Synaptic vesicle cycle,4,False,False
+KEGG,hsa00010,Glycolysis / Gluconeogenesis,3,False,False
+KEGG,hsa00040,Pentose and glucuronate interconversions,3,False,False
+KEGG,hsa00051,Fructose and mannose metabolism,3,False,False
+KEGG,hsa00100,Steroid biosynthesis,3,False,False
+KEGG,hsa00232,Caffeine metabolism,3,False,False
+KEGG,hsa00270,Cysteine and methionine metabolism,3,False,False
+KEGG,hsa00340,Histidine metabolism,3,False,False
+KEGG,hsa00562,Inositol phosphate metabolism,3,False,False
+KEGG,hsa00620,Pyruvate metabolism,3,False,False
+KEGG,hsa00730,Thiamine metabolism,3,False,False
+KEGG,hsa01232,Nucleotide metabolism,3,False,False
+KEGG,hsa04060,Cytokine-cytokine receptor interaction,3,False,False
+KEGG,hsa04061,Viral protein interaction with cytokine and cytokine receptor,3,False,False
+KEGG,hsa04070,Phosphatidylinositol signaling system,3,False,False
+KEGG,hsa04120,Ubiquitin mediated proteolysis,3,False,False
+KEGG,hsa04340,Hedgehog signaling pathway,3,False,False
+KEGG,hsa04390,Hippo signaling pathway,3,False,False
+KEGG,hsa04710,Circadian rhythm,3,False,False
+KEGG,hsa04927,Cortisol synthesis and secretion,3,False,False
+KEGG,hsa04961,Endocrine and other factor-regulated calcium reabsorption,3,False,False
+KEGG,hsa04979,Cholesterol metabolism,3,False,False
+KEGG,hsa05144,Malaria,3,False,False
+KEGG,hsa05414,Dilated cardiomyopathy,3,False,False
+KEGG,hsa00053,Ascorbate and aldarate metabolism,2,False,False
+KEGG,hsa00280,"Valine, leucine and isoleucine degradation",2,False,False
+KEGG,hsa00410,beta-Alanine metabolism,2,False,False
+KEGG,hsa00511,Other glycan degradation,2,False,False
+KEGG,hsa00564,Glycerophospholipid metabolism,2,False,False
+KEGG,hsa00565,Ether lipid metabolism,2,False,False
+KEGG,hsa00900,Terpenoid backbone biosynthesis,2,False,False
+KEGG,hsa01200,Carbon metabolism,2,False,False
+KEGG,hsa03008,Ribosome biogenesis in eukaryotes,2,False,False
+KEGG,hsa03030,DNA replication,2,False,False
+KEGG,hsa03040,Spliceosome,2,False,False
+KEGG,hsa03082,ATP-dependent chromatin remodeling,2,False,False
+KEGG,hsa03272,Virion - Hepatitis viruses,2,False,False
+KEGG,hsa04156,Integrated stress response (ISR) signaling pathway,2,False,False
+KEGG,hsa04260,Cardiac muscle contraction,2,False,False
+KEGG,hsa04382,Cornified envelope formation,2,False,False
+KEGG,hsa04514,Cell adhesion molecule (CAM) interaction,2,False,False
+KEGG,hsa04614,Renin-angiotensin system,2,False,False
+KEGG,hsa04623,Cytosolic DNA-sensing pathway,2,False,False
+KEGG,hsa04918,Thyroid hormone synthesis,2,False,False
+KEGG,hsa04964,Proximal tubule bicarbonate reclamation,2,False,False
+KEGG,hsa04974,Protein digestion and absorption,2,False,False
+KEGG,hsa04975,Fat digestion and absorption,2,False,False
+KEGG,hsa04977,Vitamin digestion and absorption,2,False,False
+KEGG,hsa04978,Mineral absorption,2,False,False
+KEGG,hsa05143,African trypanosomiasis,2,False,False
+KEGG,hsa05150,Staphylococcus aureus infection,2,False,False
+KEGG,hsa05410,Hypertrophic cardiomyopathy,2,False,False
+KEGG,hsa05412,Arrhythmogenic right ventricular cardiomyopathy,2,False,False
+KEGG,hsa00020,Citrate cycle (TCA cycle),1,False,False
+KEGG,hsa00061,Fatty acid biosynthesis,1,False,False
+KEGG,hsa00071,Fatty acid degradation,1,False,False
+KEGG,hsa00120,Primary bile acid biosynthesis,1,False,False
+KEGG,hsa00130,Ubiquinone and other terpenoid-quinone biosynthesis,1,False,False
+KEGG,hsa00220,Arginine biosynthesis,1,False,False
+KEGG,hsa00240,Pyrimidine metabolism,1,False,False
+KEGG,hsa00250,"Alanine, aspartate and glutamate metabolism",1,False,False
+KEGG,hsa00470,D-Amino acid metabolism,1,False,False
+KEGG,hsa00510,N-Glycan biosynthesis,1,False,False
+KEGG,hsa00513,Various types of N-glycan biosynthesis,1,False,False
+KEGG,hsa00520,Amino sugar and nucleotide sugar metabolism,1,False,False
+KEGG,hsa00524,"Neomycin, kanamycin and gentamicin biosynthesis",1,False,False
+KEGG,hsa00592,alpha-Linolenic acid metabolism,1,False,False
+KEGG,hsa00600,Sphingolipid metabolism,1,False,False
+KEGG,hsa00601,Glycosphingolipid biosynthesis - lacto and neolacto series,1,False,False
+KEGG,hsa00640,Propanoate metabolism,1,False,False
+KEGG,hsa00670,One carbon pool by folate,1,False,False
+KEGG,hsa00740,Riboflavin metabolism,1,False,False
+KEGG,hsa00750,Vitamin B6 metabolism,1,False,False
+KEGG,hsa00770,Pantothenate and CoA biosynthesis,1,False,False
+KEGG,hsa00860,Porphyrin metabolism,1,False,False
+KEGG,hsa01210,2-Oxocarboxylic acid metabolism,1,False,False
+KEGG,hsa01212,Fatty acid metabolism,1,False,False
+KEGG,hsa01230,Biosynthesis of amino acids,1,False,False
+KEGG,hsa01250,Biosynthesis of nucleotide sugars,1,False,False
+KEGG,hsa03013,Nucleocytoplasmic transport,1,False,False
+KEGG,hsa03420,Nucleotide excision repair,1,False,False
+KEGG,hsa03430,Mismatch repair,1,False,False
+KEGG,hsa03460,Fanconi anemia pathway,1,False,False
+KEGG,hsa04216,Ferroptosis,1,False,False
+KEGG,hsa04740,Olfactory transduction,1,False,False
+KEGG,hsa04814,Motor proteins,1,False,False
+KEGG,hsa04962,Vasopressin-regulated water reabsorption,1,False,False
+KEGG,hsa04966,Collecting duct acid secretion,1,False,False
+KEGG,hsa05110,Vibrio cholerae infection,1,False,False
+KEGG,hsa05217,Basal cell carcinoma,1,False,False
+KEGG,hsa05416,Viral myocarditis,1,False,False

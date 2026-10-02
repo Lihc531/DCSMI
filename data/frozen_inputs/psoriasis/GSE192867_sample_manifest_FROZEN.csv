@@ -1,0 +1,73 @@
+sample_id,title,group,use_primary_within_disease
+GSM5767684,blood dryness syndrome (XZ1),Blood_Dryness,True
+GSM5767685,blood dryness syndrome (XZ2),Blood_Dryness,True
+GSM5767686,blood dryness syndrome (XZ3),Blood_Dryness,True
+GSM5767687,blood dryness syndrome (XZ4),Blood_Dryness,True
+GSM5767688,blood dryness syndrome (XZ5),Blood_Dryness,True
+GSM5767689,blood dryness syndrome (XZ6),Blood_Dryness,True
+GSM5767690,blood dryness syndrome (XZ7),Blood_Dryness,True
+GSM5767691,blood dryness syndrome (XZ8),Blood_Dryness,True
+GSM5767692,blood dryness syndrome (XZ9),Blood_Dryness,True
+GSM5767693,blood dryness syndrome (XZ10),Blood_Dryness,True
+GSM5767694,blood dryness syndrome (XZ11),Blood_Dryness,True
+GSM5767695,blood dryness syndrome (XZ12),Blood_Dryness,True
+GSM5767696,blood dryness syndrome (XZ13),Blood_Dryness,True
+GSM5767697,blood dryness syndrome (XZ14),Blood_Dryness,True
+GSM5767698,blood dryness syndrome (XZ15),Blood_Dryness,True
+GSM5767699,blood dryness syndrome (XZ16),Blood_Dryness,True
+GSM5767700,blood dryness syndrome (XZ17),Blood_Dryness,True
+GSM5767701,blood dryness syndrome (XZ18),Blood_Dryness,True
+GSM5767702,blood dryness syndrome (XZ19),Blood_Dryness,True
+GSM5767703,blood dryness syndrome (XZ20),Blood_Dryness,True
+GSM5767704,blood dryness syndrome (XZ21),Blood_Dryness,True
+GSM5767705,blood dryness syndrome (XZ22),Blood_Dryness,True
+GSM5767706,blood dryness syndrome (XZ23),Blood_Dryness,True
+GSM5767707,blood heat syndrome group (XR1),Blood_Heat,True
+GSM5767708,blood heat syndrome group (XR2),Blood_Heat,True
+GSM5767709,blood heat syndrome group (XR3),Blood_Heat,True
+GSM5767710,blood heat syndrome group (XR4),Blood_Heat,True
+GSM5767711,blood heat syndrome group (XR5),Blood_Heat,True
+GSM5767712,blood heat syndrome group (XR6),Blood_Heat,True
+GSM5767713,blood heat syndrome group (XR7),Blood_Heat,True
+GSM5767714,blood heat syndrome group (XR8),Blood_Heat,True
+GSM5767715,blood heat syndrome group (XR9),Blood_Heat,True
+GSM5767716,blood heat syndrome group (XR10),Blood_Heat,True
+GSM5767717,blood heat syndrome group (XR11),Blood_Heat,True
+GSM5767718,blood heat syndrome group (XR12),Blood_Heat,True
+GSM5767719,blood heat syndrome group (XR13),Blood_Heat,True
+GSM5767720,blood heat syndrome group (XR14),Blood_Heat,True
+GSM5767721,blood heat syndrome group (XR15),Blood_Heat,True
+GSM5767722,blood heat syndrome group (XR16),Blood_Heat,True
+GSM5767723,blood stasis syndrome (XY1),Blood_Stasis,True
+GSM5767724,blood stasis syndrome (XY2),Blood_Stasis,True
+GSM5767725,blood stasis syndrome (XY3),Blood_Stasis,True
+GSM5767726,blood stasis syndrome (XY4),Blood_Stasis,True
+GSM5767727,blood stasis syndrome (XY5),Blood_Stasis,True
+GSM5767728,blood stasis syndrome (XY6),Blood_Stasis,True
+GSM5767729,blood stasis syndrome (XY7),Blood_Stasis,True
+GSM5767730,blood stasis syndrome (XY8),Blood_Stasis,True
+GSM5767731,blood stasis syndrome (XY9),Blood_Stasis,True
+GSM5767732,blood stasis syndrome (XY10),Blood_Stasis,True
+GSM5767733,blood stasis syndrome (XY11),Blood_Stasis,True
+GSM5767734,blood stasis syndrome (XY12),Blood_Stasis,True
+GSM5767735,blood stasis syndrome (XY13),Blood_Stasis,True
+GSM5767736,blood stasis syndrome (XY14),Blood_Stasis,True
+GSM5767737,blood stasis syndrome (XY15),Blood_Stasis,True
+GSM5767738,blood stasis syndrome (XY16),Blood_Stasis,True
+GSM5767739,blood stasis syndrome (XY17),Blood_Stasis,True
+GSM5767740,blood stasis syndrome (XY18),Blood_Stasis,True
+GSM5767741,blood stasis syndrome (XY19),Blood_Stasis,True
+GSM5767742,blood stasis syndrome (XY20),Blood_Stasis,True
+GSM5767743,blood stasis syndrome (XY21),Blood_Stasis,True
+GSM5767744,blood stasis syndrome (XY22),Blood_Stasis,True
+GSM5767745,blood stasis syndrome (XY23),Blood_Stasis,True
+GSM5767746,healthy control group (C1),Healthy,False
+GSM5767747,healthy control group (C2),Healthy,False
+GSM5767748,healthy control group (C3),Healthy,False
+GSM5767749,healthy control group (C4),Healthy,False
+GSM5767750,healthy control group (C5),Healthy,False
+GSM5767751,healthy control group (C6),Healthy,False
+GSM5767752,healthy control group (C7),Healthy,False
+GSM5767753,healthy control group (C8),Healthy,False
+GSM5767754,healthy control group (C9),Healthy,False
+GSM5767755,healthy control group (C10),Healthy,False

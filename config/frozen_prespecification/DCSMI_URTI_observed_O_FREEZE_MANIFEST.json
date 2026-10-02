@@ -1,0 +1,12 @@
+{
+  "freeze": "DCSMI_URTI_observed_O_FREEZE_v1.0",
+  "input_hash_data_zip": "334fd5dc3389d4a5c6f3578ae3c7403960cd087aea0a6e0fff6ae09006e0ed37",
+  "contrast": "Wind-Heat day1 vs Wind-Cold day1",
+  "wind_heat_n": 23,
+  "wind_cold_n": 32,
+  "genes_tested": 43147,
+  "normalization": "log2(CPM+1)",
+  "statistic": "Welch two sample t-test",
+  "effect": "mean(log2CPM_WH_day1)-mean(log2CPM_WC_day1)",
+  "no_patient_background_used": true
+}

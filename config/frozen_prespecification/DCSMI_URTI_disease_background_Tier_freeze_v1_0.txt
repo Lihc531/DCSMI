@@ -1,0 +1,74 @@
+DCSMI URTI DISEASE BACKGROUND TIER FREEZE v1.0
+
+Freeze status:
+FROZEN BEFORE URTI P1/P2/P3 ENDPOINT INSPECTION
+
+Purpose:
+Define the URTI disease-background strategy using the same validation philosophy
+as the psoriasis context. Disease-background selection is frozen independently
+of downstream DCSMI endpoint performance.
+
+PRIMARY TIER-B DISEASE BACKGROUND
+
+Primary cohort:
+GSE63990
+
+Role:
+Primary Tier-B URTI disease background candidate.
+
+Definition:
+Acute respiratory infection (pooled bacterial + viral)
+versus
+non-infectious illness.
+
+Rationale:
+GSE63990 directly represents an acute respiratory illness discrimination
+problem with a disease-state comparator. The pooled ARI definition avoids
+selecting bacterial or viral etiology according to downstream DCSMI results.
+
+Frozen implementation:
+- Subject-level analysis.
+- Technical replicate handling fixed before endpoint analysis.
+- Gene-level statistics generated with batch-adjusted model.
+- No DEG/FDR/fold-change filtering.
+- No downstream P1/P2/P3 information used.
+
+SECONDARY / STRESS-TEST DATASET
+
+Secondary cohort:
+GSE68310
+
+Role:
+Secondary influenza-response stress test.
+
+Reason:
+GSE68310 is a longitudinal influenza infection dataset rather than a direct
+acute respiratory illness versus non-infectious illness comparison.
+
+Allowed use:
+- Secondary robustness analysis.
+- Biological stress-test.
+- Temporal influenza-response interpretation.
+
+Not allowed:
+- Replacement of GSE63990 as primary Tier-B background based on downstream
+  DCSMI performance.
+- Relabeling as equivalent to the primary acute respiratory illness contrast.
+
+ANTI-SELECTION RULE
+
+After this freeze:
+- GSE68310 cannot replace GSE63990 because of stronger P1/P2/P3 results.
+- New disease backgrounds cannot be added solely because they improve endpoint
+  performance.
+- Any modification requires a documented pre-endpoint methodological amendment.
+
+CURRENT URTI VALIDATION STATUS
+
+Completed:
+1. Syndrome-labelled WH/WC observed O freeze.
+2. GSE63990 disease-background freeze.
+3. GSE68310 secondary stress-test designation.
+
+Next permitted step:
+URTI P1/P2/P3 endpoint execution after endpoint runner freeze verification.

@@ -1,0 +1,29 @@
+{
+  "analysis_name": "DCSMI v1.0 frozen design",
+  "freeze_date": "2026-09-22",
+  "status": "FROZEN_BEFORE_DCSMI_VALIDATION_RESULTS",
+  "master_archive": "重构.zip",
+  "master_archive_sha256": "a7915ef9bf4939d91c4044a75d19db120b60ffe7dc1333eaa0d6b1ed99e1e909",
+  "frozen_existing_inputs": {
+    "LOPO_primary_target_profiles_sha256": "9256cd3fe7ae142a91c7e081d97ba8a9225aa5aea3434c5f5673d53e5a10c9ef",
+    "LOPO_shared_specific_profiles_sha256": "af66b3f49961b7a0e578e35b6c9bb86b7c84007f4c68d7efa4c286e6b9b85669",
+    "target_universe_strata_sha256": "a3871d4da3b3f4005833875f4e8d7c11e529214f6f93a95255f5acc5fffef297",
+    "CAP_metaZ_sha256": "168d9a23c06df388b69f73d92b2e7811b1f5332dfb507893511367fd752be58e",
+    "target_ubiquity_sha256": "7a714cbfadd44033aabcc7178d4ff045bbc826f6cc5606705acc76fcad002bba",
+    "STRING_node_stats_sha256": "809ce76d0be2f2f954855444d1aa89f633be908ebc9cc483eb59e670900689e6",
+    "uploaded_URTI_data_zip_sha256": "334fd5dc3389d4a5c6f3578ae3c7403960cd087aea0a6e0fff6ae09006e0ed37"
+  },
+  "primary_module_universe": "MSigDB Hallmark 2026.1.Hs, 50 sets",
+  "secondary_module_universe": "Reactome v97",
+  "primary_target_universe_n": 374,
+  "matched_strata_n": 19,
+  "structural_null_replicates": 10000,
+  "structural_null_seed": 20260922,
+  "bootstrap_replicates": 2000,
+  "primary_endpoints": [
+    "P1 mechanism prediction",
+    "P2 disease-conditioning gain",
+    "P3 syndrome selectivity"
+  ],
+  "CAP_role": "final application / historical development, not validation"
+}

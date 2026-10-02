@@ -1,0 +1,89 @@
+DCSMI BIAS-AWARE GO/KEGG FUNCTIONAL CHARACTERIZATION
+PRESPECIFICATION FREEZE v1.0
+Freeze date: 2026-09-27
+Seed: 20260922
+
+PURPOSE
+Functionally characterize treatment/prescription-derived syndrome target organization without claiming patient-level syndrome mechanism. External Western-disease/patient-omics analyses are evidence-boundary tests and are not used to select, tune, filter, or interpret primary functional endpoints.
+
+PRIMARY CLAIM DOMAIN
+Allowed: prescription-derived / treatment-informed functional organization; syndrome-associated functional differentiation; structurally calibrated functional enrichment.
+Not allowed from this analysis alone: patient syndrome mechanism; causal mechanism; treatment efficacy; therapeutic reversal; external biological validation.
+
+FROZEN INPUT TARGET SPACE
+1. 374-target frozen universe.
+2. Primary target weights: frozen LOPO ubiquity-corrected target projection.
+3. Components: SHARED, SPECIFIC_PDOL, SPECIFIC_PHOL, SPECIFIC_WHIL. Complete syndrome profiles must be reconstructed exactly as SHARED + syndrome-specific component using the original component masses; reconstruction QA is mandatory.
+4. Structural strata: existing 19 degree x target-ubiquity strata including NO_STRING where applicable. No target or stratum may be altered based on functional results.
+
+FUNCTIONAL DATABASES
+Primary functional families:
+A. Gene Ontology Biological Process (GO-BP), human.
+B. KEGG human pathways.
+Annotation snapshot must be frozen before analysis and accompanied by source URL/version/date/SHA256.
+GO annotations must use a documented human GO annotation snapshot and ontology propagation rule. KEGG must use a documented human gene-pathway snapshot.
+No pathway may be added/removed after inspecting syndrome scores except by the frozen eligibility rules below.
+
+GENE IDENTIFIER MAPPING
+Exact gene-symbol mapping only. No fuzzy mapping. Aliases may be used only through a frozen documented authoritative mapping table. Unmapped targets remain in the 374-target universe with zero membership in the affected functional family; they are not silently dropped from the null weight vector.
+
+PATHWAY ELIGIBILITY
+Eligibility is determined only by intersection with the frozen 374-target universe.
+Primary: >=5 mapped frozen targets in a term/pathway.
+Terms with <5 frozen targets are excluded before observing syndrome statistics.
+Very broad terms/pathways containing >50% of the 374-target universe are excluded from primary differential interpretation but retained in an audit table.
+GO-BP redundancy is handled only after primary statistics; no semantic pruning may alter primary multiplicity.
+
+PRIMARY SCORE
+For syndrome/component s and functional term p:
+Q_sp = sum_{g in p} w_sg
+where w_s is the full nonnegative frozen 374-target weight vector (including zeros where applicable).
+
+STRUCTURAL NULL
+For each syndrome/component independently, permute the complete 374-target weight vector within the frozen matched strata. This preserves the weight multiset and total weight in every stratum.
+N = 10,000 replicates; seed = 20260922.
+For each term:
+A_sp = (Q_sp - mean_b Q_sp^(b)) / sd_b Q_sp^(b)
+If null SD = 0, set A_sp=0, flag ZERO_NULL_SD, and assign no significance.
+Empirical enrichment P: (1 + #{Q_null >= Q_obs})/(N+1).
+Primary positive affinity: Aplus_sp=max(A_sp,0), for descriptive visualization only; inference uses empirical P.
+
+BETWEEN-SYNDROME DIFFERENTIAL FUNCTIONAL ORGANIZATION
+Primary differential statistic for syndrome s versus the other two syndromes:
+Delta_sp = A_sp - mean(A_tp for t != s).
+The null Delta is computed replicate-wise using synchronized replicate index but independently permuted syndrome weight vectors within strata.
+Empirical upper-tail P is computed against Delta_null.
+This is the primary statistic for claims of syndrome-associated functional differentiation.
+
+MULTIPLICITY
+Two primary families:
+Family GO: all eligible syndrome x GO-BP differential tests.
+Family KEGG: all eligible syndrome x KEGG differential tests.
+BH-FDR is applied within each family across all 3 syndromes and all eligible terms/pathways.
+A pathway is called structurally calibrated syndrome-associated only if Delta>0 and BH-FDR q<0.05.
+Absolute within-syndrome enrichment Q/A is descriptive/supporting and receives BH-FDR in a separate annotation family; it cannot substitute for failed differential inference.
+
+SHARED COMPONENT
+The SHARED component is characterized descriptively with the same structural null. It is not called a common patient syndrome mechanism. Its GO/KEGG results are reported as prescription-shared functional organization only.
+
+STANDARD ORA
+Conventional Fisher/hypergeometric ORA may be reported only as a descriptive sensitivity analysis using the frozen 374-target universe as background and a threshold frozen before execution. It cannot be the primary evidence and cannot rescue a failed weighted structural-null endpoint.
+
+ROBUSTNESS
+1. Complete versus shared/specific representation.
+2. Weight-vector conservation and within-stratum invariants.
+3. Node/gene order invariance.
+4. 10,000-null deterministic rerun check.
+5. GO-BP versus KEGG convergence is descriptive triangulation, not a requirement for significance.
+6. Redundancy consolidation occurs after inference only.
+
+EXTERNAL EVIDENCE BOUNDARY
+CAP alignment, RWR, psoriasis validation, URTI validation, and DCSMI v1.0 are not used to select functional terms or tune this branch. They are reported downstream as tests of whether treatment-informed functional organization generalizes to disease/patient biology.
+Negative external correspondence does not invalidate the existence of prescription-derived functional organization; it limits attribution to patient syndrome biology.
+
+DECISION RULE FOR MANUSCRIPT RECONSTRUCTION
+Positive anchor exists if at least one functional family (GO-BP or KEGG) contains reproducible structurally calibrated syndrome-associated differential terms at q<0.05, with QA passing and interpretation remaining treatment-informed/prescription-derived.
+If neither family yields such terms, the manuscript must not claim syndrome-specific functional architecture and should be reframed more narrowly as a structural-bias/evidence-boundary methodological study.
+
+ANTI-RESCUE RULES
+No switching background universe, top-N cutoff, pathway database, pathway-size threshold, null strata, null direction, FDR family, or target-weight definition after seeing results. Any such change requires v1.1+ and is exploratory relative to this freeze.

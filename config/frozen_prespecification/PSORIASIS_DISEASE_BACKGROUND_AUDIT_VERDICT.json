@@ -1,0 +1,17 @@
+{
+  "audit_version": "v1.0",
+  "purpose": "Diagnose cross-cohort discordance without changing frozen primary rules or selecting a favorable cohort based on endpoint performance.",
+  "technical_error_found": false,
+  "checks": {
+    "GSE147339_sample_mapping": "PASS: 20/20 expression columns uniquely mapped to GEO sample titles; 10 psoriasis and 10 controls.",
+    "GSE61281_group_definition": "PASS: 20 cutaneous psoriasis vs 12 unaffected controls; 20 PsA excluded.",
+    "effect_direction": "PASS: logFC defined as psoriasis minus control in both cohorts.",
+    "GSE61281_probe_annotation": "PASS: exact NAME -> GENE_SYMBOL only; no fuzzy mapping.",
+    "low_information_gene_explanation": "NOT SUPPORTED: discordance persists/strengthens with RNA-seq expression and effect-size restrictions.",
+    "batch_explanation": "NOT SUPPORTED: batch-adjusted diagnostic remains negative.",
+    "sex_explanation": "NOT SUPPORTED: batch+sex-adjusted diagnostic remains negative."
+  },
+  "frozen_primary_decision": "UNCHANGED: two-cohort combined disease background remains SECONDARY_STRESS_TEST and is not eligible as Tier-A primary.",
+  "scientific_interpretation": "The observed discordance is robust to the audited technical alternatives. The current evidence is more consistent with substantial cross-platform/cohort/phenotype heterogeneity than with a simple coding, sign, low-expression, batch, or sex-confounding error. This is an interpretation, not proof of a specific biological cause.",
+  "next_prespecified_safe_step": "Use a single independent cohort only under the already-frozen Tier-B rule, while retaining the other cohort and the failed two-cohort consistency result as secondary/stress-test evidence. Do not choose between cohorts using downstream P1/P2/P3 performance."
+}

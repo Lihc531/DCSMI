@@ -1,0 +1,47 @@
+﻿article_id,syndrome_code,is_pneumonia,disease_standard,disease_subtype,article_title,source_file,source_row_refs
+A0066,PDOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,小青龙汤加减治疗脑卒中并发肺部感染痰湿内阻证患者的临床疗效.pdf,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:6
+A0086,PDOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,自拟肃肺化痰方配合拔罐疗法治疗肺炎恢复期(痰湿阻肺证)患儿的临床效果观察.pdf,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:9; PDOL:31
+A0094,PDOL,1,pneumonia/CAP,community-acquired pneumonia,加味降气化痰汤联合穴位贴敷治疗老年社区获得性肺炎痰湿阻肺证患者的疗效观察,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:41
+A0100,PDOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,苓甘五味姜辛汤加味治疗重症肺炎痰湿阻肺证临床观察,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:47
+A0105,PDOL,1,pneumonia/CAP,community-acquired pneumonia,健脾化痰法治疗老年社区获得性肺炎（痰湿阻肺证）疗效观察,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:52
+A0112,PDOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,《杏苏二陈汤联合止咳化痰贴治疗小儿肺炎恢复期痰湿阻肺证42例临床观察》,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:59
+A0113,PDOL,1,pneumonia/CAP,community-acquired pneumonia,《从龙汤加减治疗成人社区获得性肺炎（痰湿阻肺证）的临床观察》,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:60
+A0115,PDOL,1,pneumonia/CAP,community-acquired pneumonia,《加味二陈汤联合西药治疗老年社区获得性肺炎痰湿阻肺证的临床观察》,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:62
+A0120,PDOL,1,pneumonia/CAP,community-acquired pneumonia,《探讨加味二陈汤联合西药治疗老年社区获得性肺炎(痰湿阻肺证)的临床效果》,#U75f0#U6e7f#U963b#U80ba#U8bc1.xlsx,PDOL:67
+A0124,PHOL,1,pneumonia/CAP,community-acquired pneumonia,《基于“肺热论”探讨止咳Ⅱ号方治疗社区获得性肺炎（痰热壅肺证）的临床研究》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:5
+A0125,PHOL,1,pneumonia/CAP,community-acquired pneumonia,《止咳1号方治疗老年CAP痰热壅肺证的疗效观察》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:6
+A0126,PHOL,1,pneumonia/CAP,Mycoplasma pneumonia,《运脾泻肺化痰方对肺炎支原体肺炎痰热壅肺证患儿炎症反应和心肌酶谱的影响》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:7
+A0133,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,《宣白承气汤治疗重症肺炎（痰热壅肺证）患者的临床疗效观察》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:14
+A0140,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,《苇茎汤合麻杏石甘汤加减对卒中相关性肺炎肺部感染评分、炎症因子水平的影响》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:21
+A0141,PHOL,1,pneumonia/CAP,community-acquired pneumonia,基于托法理论辨证治疗社区获得性肺炎的临床观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:22
+A0150,PHOL,1,pneumonia/CAP,community-acquired pneumonia,1. 桑白皮汤加减治疗成人社区获得性肺炎痰热壅肺证患者的临床观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:32
+A0152,PHOL,1,pneumonia/CAP,community-acquired pneumonia,《桑白皮汤化裁辅治重症社区获得性肺炎痰热壅肺证临床观察》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:34
+A0155,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,三仁麻杏清肺汤加减辅治大叶性肺炎痰热壅肺证临床观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:37
+A0162,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,《清气化痰汤加减治疗痰热壅肺型重症肺炎的临床研究》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:44
+A0166,PHOL,1,pneumonia/CAP,Mycoplasma pneumonia,清金化痰汤加减联合阿奇霉素序贯疗法治疗痰热壅肺型儿童重症肺炎支原体肺炎临床研究,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:48
+A0173,PHOL,1,pneumonia/CAP,community-acquired pneumonia,清金化痰汤治疗社区获得性肺炎(痰热壅肺证)延迟吸收的疗效观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:55
+A0175,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,《清金化痰汤治疗重症肺炎（痰热壅肺证）患者的临床研究》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:57
+A0182,PHOL,1,pneumonia/CAP,Mycoplasma pneumonia,《清肺化痰汤联合阿奇霉素治疗痰热壅肺证小儿支原体肺炎的临床疗效及对其白细胞介素-6、C-反应蛋白、降钙素原水平的影响》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:64
+A0186,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,清肺化痰方辨治成人痰热壅肺证肺炎的临床研究,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:68
+A0189,PHOL,1,pneumonia/CAP,community-acquired pneumonia,芩蒌清肺饮治疗痰热壅肺型社区获得性肺炎30例疗效观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:71
+A0191,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,千金汤加味治疗重症肺炎（痰热壅肺证）的临床观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:73
+A0194,PHOL,1,pneumonia/CAP,community-acquired pneumonia,《麻杏陷胸汤联合揿针治疗社区获得性肺炎痰热壅肺证的临床疗效观察》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:76
+A0195,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,《麻杏石甘汤加减灌肠治疗重症肺炎合并呼吸衰竭痰热壅肺证疗效观察》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:77
+A0202,PHOL,1,pneumonia/CAP,community-acquired pneumonia,《解炎汤加味治疗成人社区获得性肺炎痰热壅肺证疗效观察》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:85
+A0204,PHOL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,解毒泻肺合剂治疗老年重症肺炎（痰热壅肺证）临床观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:87
+A0210,PHOL,1,pneumonia/CAP,community-acquired pneumonia,《豁痰丸治疗中老年社区获得性肺炎痰热壅肺证的抗氧化应激能力与临床疗效观察》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:94
+A0211,PHOL,1,pneumonia/CAP,Mycoplasma pneumonia,《化痰宣肺汤合小陷胸汤联合布地奈德雾化吸入剂治疗痰热壅肺证肺炎支原体肺炎患儿的临床研究》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:95; PHOL:96
+A0215,PHOL,1,pneumonia/CAP,community-acquired pneumonia,肺瘅宁方治疗社区获得性肺炎（痰热壅肺证）临床观察,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:100
+A0220,PHOL,1,pneumonia/CAP,community-acquired pneumonia,《补肺解毒汤治疗老年重症社区获得性肺炎痰热壅肺证的临床疗效研究》,#U75f0#U70ed#U58c5#U80ba#U8bc1.xlsx,PHOL:106
+A0017,WHIL,1,pneumonia/CAP,COVID-19 pneumonia,《加味桑菊饮治疗风热犯肺证新型冠状病毒肺炎疗效观察》,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:22
+A0029,WHIL,1,pneumonia/CAP,ventilator-associated pneumonia,宣清和化方辅助治疗呼吸机相关性肺炎（风热犯肺证）的临床观察,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:23; WHIL:36
+A0033,WHIL,1,pneumonia/CAP,community-acquired pneumonia,止得咳颗粒治疗风热犯肺型社区获得性肺炎患者疗效及对血清炎症因子影响,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:40
+A0034,WHIL,1,pneumonia/CAP,community-acquired pneumonia,《桑麻二虫汤治疗社区获得性肺炎(风热犯肺证)临床研究》,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:2; WHIL:41
+A0035,WHIL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,自拟青黛饮治疗小儿肺炎风热犯肺证,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:42
+A0044,WHIL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,宣肺泄热方辅助治疗儿童支气管肺炎风热犯肺证75例临床观察,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:51
+A0045,WHIL,1,pneumonia/CAP,community-acquired pneumonia,桑菊饮对社区获得性肺炎风热犯肺证患者炎症因子水平的影响研究,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:52
+A0046,WHIL,1,pneumonia/CAP,Mycoplasma pneumonia,宣肺清瘟颗粒治疗肺炎支原体感染的急性气管-支气管炎(风热犯肺证)的临床研究,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:53
+A0049,WHIL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,自拟宣肺清热止咳方对学龄前风热犯肺型支气管肺炎患儿临床症状及炎症因子水平的影响,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,WHIL:56
+A0051,WHIL,1,pneumonia/CAP,Mycoplasma pneumonia,小柴胡汤加减联合米诺环素胶囊治疗肺炎支原体肺炎风热犯肺证的临床观察,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,"WHIL:5; WHIL:59,60"
+A0053,WHIL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,麻杏石甘汤加减治疗小儿风热犯肺型肺炎的临床效果观察,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,"WHIL:62,63"
+A0054,WHIL,1,pneumonia/CAP,other pneumonia/lower respiratory infection,宣肺泄热方辅助治疗儿童支气管肺炎风热犯肺证的疗效观察,#U98ce#U70ed#U72af#U80ba#U8bc1.xlsx,"WHIL:64,65"

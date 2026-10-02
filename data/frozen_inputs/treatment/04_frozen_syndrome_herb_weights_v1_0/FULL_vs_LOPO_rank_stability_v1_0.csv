@@ -1,0 +1,4 @@
+﻿syndrome_code,full_observed_herbs,lopo_observed_herbs,retained_observed_herbs,lost_all_support_after_lopo,retention_fraction,spearman_full_vs_lopo_all_herbs,spearman_pvalue
+PDOL,98,95,95,3,0.9693877551020408,0.9750998139878836,1.5224974268300516e-127
+PHOL,136,121,121,15,0.8897058823529411,0.9438858346805782,2.55790268102905e-94
+WHIL,116,96,96,20,0.8275862068965517,0.9071481851268619,4.230089434665842e-74

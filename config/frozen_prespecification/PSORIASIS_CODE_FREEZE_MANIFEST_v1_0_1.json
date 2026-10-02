@@ -1,0 +1,14 @@
+{
+  "freeze_status": "CODE_FROZEN_BEFORE_SUCCESSFUL_ENDPOINT_EXECUTION",
+  "runner_version": "v1.0.1 computational optimization only",
+  "runner_sha256": "384a6fdba1532bd08a40c7d4155afa230f7d58e558ff3b0fb3d34516fdf6a799",
+  "master_seed": 20260922,
+  "N1_replicates": 10000,
+  "N3_bootstrap_replicates": 2000,
+  "equivalence_tests": [
+    "Welch fast vs scipy PASS",
+    "bootstrap multiplicity vs explicit resampling PASS"
+  ],
+  "inferential_changes_from_v1_0": null,
+  "previous_v1_0_execution": "timed out before writing any endpoint output"
+}

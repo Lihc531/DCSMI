@@ -1,0 +1,951 @@
+DCSMI v1.0 — Disease-Conditioned Syndrome Mechanism Inference
+
+Mathematical definition, data isolation, endpoints, null models, dataset plan, and freeze rules
+
+Status: FROZEN DESIGN — before any DCSMI v1.0 result is computed on
+URTI, psoriasis, RA, liver-disease, or other syndrome-labelled
+validation datasets.
+Freeze date: 2026-09-22
+Purpose: establish a transferable, bias-aware framework for quantifying
+molecular compatibility between a Western-medicine disease and a TCM
+syndrome, and for predicting disease-conditioned syndrome molecular
+mechanisms when syndrome-specific patient omics are unavailable.
+
+This document freezes the inferential design. It does not claim that
+DCSMI v1.0 has already been validated.
+
+------------------------------------------------------------------------
+
+1. Scientific question
+
+DCSMI v1.0 addresses two related but distinct questions.
+
+Q1. Disease–syndrome molecular compatibility
+
+Given: 1. an independently measured Western-disease molecular state; and
+2. a treatment-informed molecular prior for a TCM syndrome,
+
+does the syndrome prior preferentially occupy molecular modules that are
+strongly perturbed in that disease, beyond the target-database/network
+structure expected by chance?
+
+Q2. Disease-conditioned syndrome mechanism prediction
+
+When syndrome-labelled patient omics are available for an external
+disease, does the mechanism predicted from:
+
+independent disease molecular state × independent treatment-informed
+syndrome prior
+
+correspond to the molecular modules that actually distinguish that
+syndrome from other syndromes within the disease?
+
+The target application is CAP, for which disease-level transcriptomics
+are available but syndrome-labelled CAP omics are not.
+
+------------------------------------------------------------------------
+
+2. Conceptual model
+
+For patient molecular state Y in Western disease d and TCM syndrome s:
+
+Y_(d,s) = B_d + Delta_(s|d) + epsilon
+
+where:
+
+-   B_d = common molecular state associated with Western disease d;
+-   Delta_(s|d) = syndrome-associated molecular modulation conditional
+    on disease d;
+-   epsilon = individual, technical, pathogen, severity, treatment, and
+    other residual variation.
+
+DCSMI does not assume that a TCM syndrome is equivalent to a Western
+disease. It also does not assume that a syndrome has a
+disease-independent fixed molecular signature.
+
+Instead, DCSMI estimates a disease-conditioned mechanism:
+
+M_(d,s) = F(B_d, T_s)
+
+where T_s is an independently constructed treatment-informed syndrome
+prior.
+
+------------------------------------------------------------------------
+
+3. Non-causal interpretation
+
+DCSMI v1.0 estimates molecular compatibility and mechanism localization,
+not:
+
+-   treatment efficacy;
+-   therapeutic reversal;
+-   activation/inhibition by herbs;
+-   causal disease mechanisms;
+-   diagnostic equivalence between a TCM syndrome and a Western disease;
+-   proof that a predicted CAP syndrome mechanism exists in CAP
+    patients.
+
+A positive DCSMI result is evidence that an independently derived
+syndrome treatment prior and an independently measured disease state
+converge on the same molecular modules more strongly than expected under
+the frozen structural null.
+
+------------------------------------------------------------------------
+
+4. Frozen molecular universes
+
+4.1 Target universe
+
+Primary target universe G_T:
+
+-   374 frozen TCM-ID targets;
+-   inherited from the finalized target-projection/matched-null branch;
+-   no target may be added or removed in response to external validation
+    results.
+
+Frozen target-strata file:
+matched_null_target_universe_and_strata_v1_0_1.csv
+
+SHA256: a3871d4da3b3f4005833875f4e8d7c11e529214f6f93a95255f5acc5fffef297
+
+4.2 Functional-module universe
+
+Primary module universe:
+
+Human MSigDB Hallmark collection, version 2026.1.Hs, all 50 Hallmark
+gene sets.
+
+Reason: Hallmarks provide a fixed, relatively low-redundancy biological
+state space and avoid selecting pathways after results are known.
+
+No Hallmark may be removed because it is biologically inconvenient or
+statistically non-significant.
+
+Module eligibility for a particular transcriptomic dataset: - at least
+15 measured genes from that Hallmark; - at least 40 of the 50 Hallmarks
+must remain eligible for a dataset to enter primary DCSMI validation; -
+otherwise the dataset is secondary/exploratory.
+
+Secondary high-resolution annotation: Reactome v97 (2026-06-30 release),
+used only after the Hallmark primary analysis is complete. Reactome
+results cannot rescue a failed Hallmark primary endpoint.
+
+------------------------------------------------------------------------
+
+5. Treatment-informed syndrome prior T_s
+
+5.1 Current three lung syndromes
+
+For PDOL, PHOL, and WHIL, the primary syndrome priors are the already
+frozen, non-diffused LOPO ubiquity-corrected target profiles:
+
+LOPO_FROZEN_primary_target_weights_for_RWR_v1_1.csv
+
+SHA256: 9256cd3fe7ae142a91c7e081d97ba8a9225aa5aea3434c5f5673d53e5a10c9ef
+
+For each syndrome:
+
+T_s(g) >= 0 and sum_(g in G_T) T_s(g) = 1
+
+The shared/specific decomposition is retained as a
+sensitivity/interpretive layer, not the primary generic DCSMI input:
+
+LOPO_SHARED_SPECIFIC_primary_target_profiles_v1_0.csv
+
+SHA256: af66b3f49961b7a0e578e35b6c9bb86b7c84007f4c68d7efa4c286e6b9b85669
+
+5.2 External benchmark syndromes
+
+External validation syndromes must receive priors constructed without
+using their patient omics.
+
+Preferred source: syndrome → formula/prescription relations from a fixed
+clinical/curated source, with formula compositions mapped to herbs and
+then projected through the same frozen TCM-ID target system.
+
+SoFDA may be used only for: - syndrome names/aliases; - syndrome →
+formula relations.
+
+For DCSMI benchmark prior construction, the following SoFDA fields are
+prohibited: - syndrome-related genes; - disease-related genes; -
+disease–syndrome similarity scores; - pathway associations derived from
+those genes; - any molecular feature that would directly leak the
+validation target.
+
+If formula compositions must be obtained from another source, that
+source must be fixed and documented before any DCSMI score for that
+syndrome is computed.
+
+5.3 Formula-level evidence weighting for external priors
+
+If syndrome s has M_s eligible formulas and herb h occurs in m_hs
+formulas:
+
+E_hs = (m_hs + 0.5) / (M_s + 1)
+
+This mirrors the previously frozen evidence-first support model.
+
+Each herb is projected using the already frozen rules:
+
+contribution_(h,g) = E_hs / |T_h| × IDF_g
+
+where:
+
+IDF_g = log((N_H + 1)/(n_g + 1)) + 1
+
+and N_H = 172 is the frozen target-database herb universe.
+
+The resulting target vector is sum-normalized to 1.
+
+No fuzzy herb mapping is allowed. Missing herbs remain missing. No
+external patient omics may alter herb mapping, target mapping, degree
+correction, IDF, or formula weights.
+
+5.4 External-prior eligibility
+
+A benchmark syndrome prior must: - map to the frozen 374-target
+universe; - have at least 5 positive mapped targets; - retain at least
+70% of its pre-projection herb-weight mass after target mapping.
+
+Priors failing these criteria are reported but cannot enter primary
+validation.
+
+------------------------------------------------------------------------
+
+6. Western-disease molecular state B_d
+
+Disease state must be derived from Western-diagnosis-labelled
+disease-vs-control transcriptomics independent of the syndrome-labelled
+evaluation cohort whenever possible.
+
+For cohort j and gene g:
+
+z_(d,j,g) = sign(logFC_(d,j,g)) × Phi^(-1)(1 - P_(d,j,g)/2)
+
+No FDR or fold-change prefilter is applied.
+
+For J independent disease cohorts:
+
+Z_d(g) = ( sum_j z_(d,j,g) ) / sqrt(J)
+
+using equal-weight Stouffer integration over genes measured in the
+included cohorts.
+
+If only one independent disease cohort exists, its signed z is used but
+the disease background is Tier B rather than Tier A.
+
+6.1 Disease-background QA
+
+For multiple cohorts, report: - shared-gene count; - signed-Z Spearman
+correlation; - logFC Spearman correlation when available; - direction
+concordance; - cohort-specific Hallmark perturbation profiles.
+
+For future datasets, a disease background with non-positive signed-Z
+Spearman or direction concordance <= 0.50 is downgraded to
+secondary/stress-test status.
+
+The already-inspected COPD pair is not retrospectively filtered by this
+rule; it remains a pre-existing negative stress test because its poor
+reproducibility was known before DCSMI v1.0 was frozen.
+
+6.2 CAP disease state
+
+CAP is an application dataset, not DCSMI validation/training data.
+
+Frozen CAP disease signature:
+CAP_CONTINUOUS_PRIMARY_equal_weight_metaZ_v1_0_1.csv
+
+SHA256: 168d9a23c06df388b69f73d92b2e7811b1f5332dfb507893511367fd752be58e
+
+The existing CAP matched-null results are historical
+development/falsification evidence and cannot be counted as prospective
+validation of DCSMI v1.0.
+
+------------------------------------------------------------------------
+
+7. Primary disease-module perturbation vector D_d
+
+Because herb-target databases do not encode reliable
+activation/inhibition direction, the primary DCSMI relation is
+direction-agnostic.
+
+For disease d, convert absolute gene-level Z values to within-dataset
+percentiles:
+
+r_d(g) = rank_average( |Z_d(g)| ) / (N_d + 1)
+
+For Hallmark module H_k:
+
+U_(d,k) = mean_(g in H_k ∩ G_d) r_d(g)
+
+Across eligible Hallmarks, define the nonnegative disease perturbation
+vector:
+
+D_(d,k) = U_(d,k) / sqrt( sum_l U_(d,l)^2 )
+
+Signed Hallmark enrichment/NES may be calculated only for biological
+direction annotation. It is not used to change the primary DCSMI score.
+
+------------------------------------------------------------------------
+
+8. Structurally calibrated syndrome-module affinity A_s
+
+For syndrome s and Hallmark H_k:
+
+Q_(s,k) = sum_(g in G_T ∩ H_k) T_s(g)
+
+Q is the syndrome target mass assigned to module k.
+
+Q alone is not interpretable because herb-target databases are
+structurally biased.
+
+Therefore Q is calibrated using the frozen matched target null.
+
+For null replicate b:
+
+T_s^(b) = a within-stratum permutation of the complete 374-target weight
+vector, including zeros.
+
+Then:
+
+Q_(s,k)^(b) = sum_(g in G_T ∩ H_k) T_s^(b)(g)
+
+and:
+
+A_(s,k) = [ Q_(s,k) - mean_b Q_(s,k)^(b) ] / sd_b Q_(s,k)^(b)
+
+Primary syndrome module affinity uses:
+
+Aplus_(s,k) = max(A_(s,k), 0)
+
+A negative A means that the syndrome prior is not enriched in that
+module relative to matched target structure; it is not interpreted as
+biological inhibition.
+
+If the null SD for a module is zero: - A_(s,k) is set to 0; - the module
+is QA-flagged; - no significance may be assigned to that module.
+
+------------------------------------------------------------------------
+
+9. DCSMI disease–syndrome compatibility score R_(d,s)
+
+The molecular compatibility score is the cosine similarity between the
+disease perturbation vector and structurally calibrated positive
+syndrome affinity:
+
+R_(d,s) = sum_k D_(d,k) Aplus_(s,k) / [ sqrt(sum_k D_(d,k)^2) ×
+sqrt(sum_k Aplus_(s,k)^2) ]
+
+R ranges from 0 to 1 when defined.
+
+Interpretation: high R means that the syndrome’s structurally excessive
+target-module loading preferentially occupies modules strongly perturbed
+in the disease.
+
+R is molecular compatibility, not proof that the syndrome clinically
+occurs in the disease.
+
+If Aplus has fewer than 10 nonzero eligible Hallmarks, R is reported as
+low-information and the syndrome cannot enter primary mechanism
+validation.
+
+------------------------------------------------------------------------
+
+10. Disease-conditioned syndrome mechanism vector M_(d,s)
+
+For each eligible Hallmark:
+
+M_(d,s,k) = D_(d,k) × Aplus_(s,k)
+
+Normalize for presentation:
+
+Mtilde_(d,s,k) = M_(d,s,k) / sum_l M_(d,s,l)
+
+when the denominator is nonzero.
+
+Mtilde is the primary predicted disease-conditioned syndrome mechanism
+profile.
+
+It answers: “Given disease d, which disease-perturbed modules are
+preferentially supported by the independent treatment-informed prior for
+syndrome s?”
+
+------------------------------------------------------------------------
+
+11. Observed syndrome molecular state O_(d,s) for validation only
+
+In a syndrome-labelled patient transcriptomic cohort, syndrome omics are
+never used to construct T_s or D_d.
+
+For a disease containing at least two syndrome groups, define the
+primary within-disease syndrome contrast:
+
+syndrome s versus all other eligible syndrome groups in the same Western
+disease.
+
+For a two-syndrome study, this reduces to the direct pairwise contrast.
+
+Generate gene-level:
+
+Zobs_(d,s,g)
+
+using the same signed-Z transformation from the differential-expression
+P value and logFC.
+
+Convert |Zobs| to within-contrast percentiles and summarize Hallmarks
+exactly as for the disease vector:
+
+O_(d,s,k) = mean percentile(|Zobs|) in Hallmark k
+
+followed by L2 normalization across eligible Hallmarks.
+
+Healthy controls are not required for O and are not used in the primary
+within-disease syndrome contrast.
+
+Dataset-specific covariates may be included only if: - they are present
+in the public metadata; - they are defined before DCSMI target
+integration; - they are conventional pre-exposure/design covariates such
+as age, sex, batch, or a documented pathogen variable; - the model
+specification is frozen before R, M, or validation endpoints are
+calculated.
+
+------------------------------------------------------------------------
+
+12. Primary endpoints
+
+Primary endpoint P1 — mechanism prediction
+
+For each eligible disease–syndrome pair:
+
+P_(d,s) = Spearman( Mtilde_(d,s,·), O_(d,s,·) )
+
+across the eligible Hallmark modules.
+
+Primary alternative: P_(d,s) is greater than expected under the frozen
+structural target null.
+
+Empirical upper-tail P:
+
+p_P1 = (1 + count[P_null >= P_observed]) / (N_null + 1)
+
+Primary endpoint P2 — disease-conditioning gain
+
+To test whether Western-disease molecular information adds predictive
+value beyond the syndrome prior alone:
+
+P_syndrome_only_(d,s) = Spearman( normalize(Aplus_s), O_(d,s) )
+
+Delta_condition_(d,s) = P_(d,s) - P_syndrome_only_(d,s)
+
+Uncertainty is estimated with 2,000 stratified patient-level bootstrap
+resamples of the syndrome-labelled evaluation cohort, preserving
+syndrome group sizes and recomputing O.
+
+Primary alternative: Delta_condition > 0.
+
+A 95% percentile bootstrap CI entirely above 0 supports added value from
+disease conditioning.
+
+This endpoint is essential: without it, DCSMI cannot claim that
+Western-disease molecular information improves syndrome mechanism
+prediction.
+
+Primary endpoint P3 — syndrome selectivity
+
+For disease d with S_d eligible syndrome groups:
+
+C_(d,s) = corr(M_(d,s), O_(d,s)) - mean_(s’ != s) corr(M_(d,s),
+O_(d,s’))
+
+where corr is Spearman across eligible Hallmarks.
+
+Primary alternative: C_(d,s) > 0 beyond the paired structural target
+null.
+
+The same donor permutation is applied simultaneously to all syndrome
+priors within each null replicate so that their dependence structure is
+preserved.
+
+P3 asks whether the mechanism predicted for syndrome s resembles its own
+observed syndrome state more than the observed states of other syndromes
+in the same disease.
+
+------------------------------------------------------------------------
+
+13. Secondary endpoints
+
+1.  R_(d,s) molecular compatibility and its structural-null Z/P.
+2.  Pairwise syndrome selectivity: corr(M_s, O_s) - corr(M_s, O_s’).
+3.  Disease-only baseline: corr(D_d, O_(d,s)).
+4.  Complete-profile versus shared/specific-profile sensitivity for the
+    three current lung syndromes.
+5.  Signed disease-module annotation using Hallmark GSEA/NES.
+6.  Reactome v97 high-resolution mechanism annotation.
+7.  Longitudinal syndrome-by-time contrasts when paired data exist.
+8.  Cross-disease specificity using a predeclared panel of independent
+    disease signatures.
+9.  Relationship recovery using independent clinical disease–syndrome
+    labels, treated as positive/unlabelled rather than complete
+    positive/negative truth.
+
+No secondary endpoint may replace a failed P1–P3 result.
+
+------------------------------------------------------------------------
+
+14. Null models
+
+N1. Primary structural target null
+
+Frozen universe: 374 TCM-ID targets.
+
+Frozen strata: 19 STRING-degree × target-ubiquity strata, including
+separate NO_STRING degree categories while retaining ubiquity
+stratification.
+
+Null operation: permute the complete syndrome target-weight vector,
+including zeros, within each frozen stratum.
+
+Preserved: - target universe; - global weight multiset; - positive/zero
+target count; - positive/zero count within each stratum; - total target
+weight within each stratum; - target degree distribution; -
+target-database ubiquity structure.
+
+Null replicates: 10,000.
+
+Master RNG seed: 20260922.
+
+For multi-syndrome comparisons: the same within-stratum donor
+permutation is applied simultaneously to all syndrome priors in a
+replicate.
+
+N2. Syndrome-label permutation QA
+
+When individual-level syndrome-labelled omics are available: - permute
+syndrome labels within the Western disease; - preserve group sizes; -
+preserve paired subject identity for longitudinal designs; - recompute O
+and the validation statistic.
+
+Purpose: verify that the evaluation cohort itself contains
+syndrome-associated molecular information.
+
+This is a validation-quality null, not a replacement for N1.
+
+N3. Patient bootstrap for disease-conditioning gain
+
+2,000 stratified bootstrap replicates within syndrome groups. Used for
+Delta_condition confidence intervals.
+
+N4. Disease-context negative controls
+
+When sufficient independent disease backgrounds are available, compute
+the same syndrome prior under deliberately mismatched Western-disease
+backgrounds.
+
+These are predeclared negative-control comparisons. They may demonstrate
+disease-context specificity but cannot be selected after seeing which
+wrong disease gives the desired result.
+
+------------------------------------------------------------------------
+
+15. Multiplicity
+
+Primary inferential families are separated:
+
+Family A: all P1 mechanism-prediction tests in the predeclared primary
+validation datasets.
+
+Family B: all P3 syndrome-selectivity tests in the predeclared primary
+validation datasets.
+
+Holm correction is applied within each family.
+
+P2 disease-conditioning gain is evaluated by bootstrap CI and reported
+for every primary pair; no pair is omitted based on the direction of the
+result.
+
+Secondary pathway/module analyses use BH-FDR within their own explicitly
+stated families.
+
+------------------------------------------------------------------------
+
+16. What constitutes support for DCSMI v1.0?
+
+Transferable support
+
+DCSMI v1.0 may be described as externally supported only if:
+
+1.  at least two independent Western-disease contexts show positive P1
+    mechanism prediction after the frozen structural null, with
+    Holm-adjusted P < 0.05 in Family A; and
+2.  at least one of those disease contexts also shows:
+    -   positive P2 disease-conditioning gain with 95% bootstrap CI > 0;
+        and
+    -   positive P3 syndrome selectivity after multiplicity correction.
+
+Proof-of-concept only
+
+If only one disease context satisfies the above: DCSMI is a
+proof-of-concept, not a transferable validated method.
+
+Not externally validated
+
+If no disease context satisfies P1: the method is not externally
+validated and CAP outputs remain exploratory predictions only.
+
+No new dataset may be added solely because previous validation results
+were negative.
+
+------------------------------------------------------------------------
+
+17. Training / validation / test isolation
+
+17.1 Training/fitting
+
+DCSMI v1.0 is intentionally training-free with respect to
+syndrome-labelled patient omics.
+
+No coefficient is learned from patient syndrome labels.
+
+The following are fixed inputs/knowledge layers, not supervised training
+data: - treatment/prescription evidence; - TCM-ID herb-target mapping; -
+target degree and target ubiquity; - Hallmark definitions; - independent
+disease-vs-control transcriptomics.
+
+17.2 Historical development data
+
+The existing CAP analyses, projection ablations, RWR stress tests,
+matched-null analyses, Phase12A, and Phase12B are classified as
+historical development/falsification evidence.
+
+They motivated DCSMI design but cannot be counted as independent
+validation.
+
+The uploaded COPD pair was also inspected before this freeze and is
+therefore a historical stress-test dataset, not a blinded validation
+set.
+
+17.3 Validation datasets
+
+Validation datasets may be used after this design freeze to estimate
+DCSMI performance, but cannot change: - equations; - Hallmark primary
+universe; - target universe; - null strata; - null direction; - P1/P2/P3
+definitions; - multiplicity rules; - success criteria.
+
+17.4 Locked test dataset
+
+The preferred locked test is a multi-disease × multi-syndrome human
+transcriptomic dataset not used to design or tune DCSMI.
+
+Current preferred candidate: 2026 chronic-liver-disease PBMC study
+containing CHB, LC, and HCC across LGDHS, LDSDS, and LKYDS (132
+participants), if raw/processed individual-level expression and group
+metadata can be obtained.
+
+No DCSMI score from this dataset may be inspected before: - validation
+implementation is complete; - code passes synthetic/unit tests; - code
+hash is frozen; - benchmark syndrome priors are frozen; -
+disease-background construction is frozen.
+
+If this dataset cannot be obtained, the first future dataset meeting the
+locked-test eligibility criteria becomes the test set and must be
+declared before expression results are inspected.
+
+17.5 Final CAP application
+
+Only after validation/test status is known will DCSMI be applied to:
+
+CAP × {PDOL, PHOL, WHIL}
+
+using the already frozen CAP disease signature and frozen syndrome
+priors.
+
+Those outputs are called: predicted disease-conditioned CAP syndrome
+mechanisms.
+
+They are not called validated CAP syndrome mechanisms unless future CAP
+patients with syndrome-labelled omics directly confirm them.
+
+------------------------------------------------------------------------
+
+18. Dataset eligibility for primary validation
+
+A primary syndrome-labelled validation dataset must satisfy:
+
+-   human data;
+
+-   explicit Western diagnosis;
+
+-   at least two explicitly diagnosed TCM syndrome groups within that
+    disease;
+
+-   =10 subjects per syndrome group for the primary contrast;
+
+-   transcriptomic data with individual-level expression or sufficient
+    statistics to reconstruct continuous gene-level contrasts;
+
+-   =5,000 mapped human genes;
+
+-   =40 eligible Hallmark modules;
+
+-   no use of the syndrome-labelled cohort to construct its treatment
+    prior;
+
+-   no subject overlap with the independent disease-background cohort.
+
+Datasets failing one criterion may be secondary/exploratory but cannot
+determine transferable validation status.
+
+------------------------------------------------------------------------
+
+19. Frozen dataset plan
+
+Primary validation candidate 1 — URTI Wind-Heat/Wind-Cold
+
+Syndrome-labelled dataset: public 2024 longitudinal whole-blood RNA-seq
+study of Wind-Cold and Wind-Heat URTI.
+
+Uploaded public archive: data.zip
+
+SHA256: 334fd5dc3389d4a5c6f3578ae3c7403960cd087aea0a6e0fff6ae09006e0ed37
+
+Public matrix audit: - 124 unique transcriptomes; - WC day 1: 32; - WC
+day 6: 27; - WH day 1: 23; - WH day 6: 26; - healthy: 16; - paired WC
+day1/day6: 25; - paired WH day1/day6: 19.
+
+Primary observed syndrome contrast: WH day1 versus WC day1.
+
+Important limitation: published pathogen/COVID imbalance must be
+disclosed; the uploaded public group file does not contain individual
+pathogen labels.
+
+Independent disease background: must be constructed from a separately
+audited acute-respiratory-infection/URTI-compatible blood transcriptomic
+cohort before DCSMI scoring. Candidate public backgrounds include
+GSE63990 and GSE68310. If exact disease comparability is judged
+insufficient before scoring, URTI is downgraded to Tier B rather than
+altering the method.
+
+The earlier standalone External syndrome-axis triangulation v1.0 freeze
+remains audit provenance but is superseded for method-level inference by
+DCSMI v1.0. It may only be reported as secondary if later executed.
+
+Primary validation candidate 2 — Psoriasis vulgaris
+
+Syndrome-labelled evaluation: GSE192867.
+
+Reported groups: - blood-heat syndrome: 16; - blood-stasis syndrome:
+23; - blood-dryness syndrome: 23; - healthy controls: 10.
+
+Tissue: peripheral-blood monocyte-derived expression profiling.
+
+Independent disease-background candidates: - GSE147339, whole-blood
+psoriasis vs control RNA-seq; - GSE61281, whole-blood cutaneous
+psoriasis/psoriatic arthritis/control array data, with cutaneous
+psoriasis vs control used if metadata audit confirms eligibility.
+
+Because the evaluation uses monocytes while disease backgrounds are
+whole blood, tissue mismatch must be reported and tested as a
+sensitivity limitation.
+
+Secondary validation — Rheumatoid arthritis
+
+Syndrome-labelled evaluation: GSE205962.
+
+GEO describes multiple RA TCM syndrome groups with approximately 3–4
+patients per syndrome and healthy controls.
+
+Because group sizes are below the frozen >=10 threshold, this dataset is
+secondary only.
+
+Independent disease-background candidate: GSE93272 and other independent
+whole-blood RA datasets.
+
+The actual downloadable syndrome-group composition must be audited
+before analysis because public secondary descriptions of GSE205962 are
+not fully consistent.
+
+Secondary validation — Diabetes with blood-stasis subtypes
+
+GSE109265: high-throughput transcriptomic profiling of diabetes patients
+with blood-stasis syndrome subtypes including
+qi-deficiency/blood-stasis, qi-stagnation/blood-stasis,
+cold-coagulation/blood-stasis, and heat-accumulation/blood-stasis.
+
+Status: public candidate; sample counts, controls, and metadata must be
+audited before eligibility assignment.
+
+Secondary / syndrome-only evidence — Phlegm-dampness constitution
+
+GSE158042: PBMC expression profiling of phlegm-dampness constitution
+versus balanced constitution.
+
+This is not a Western-disease-specific syndrome cohort, so it cannot
+validate disease conditioning. It may only test the syndrome-prior side
+of the framework.
+
+Secondary / underpowered — Postmenopausal osteoporosis
+
+GSE56116: 10 osteoporosis patients divided into kidney-Yin deficiency
+(n=4), kidney-Yang deficiency (n=3), and non-kidney deficiency (n=3),
+plus 3 healthy controls.
+
+Underpowered for primary DCSMI validation.
+
+Prospective locked test — chronic liver disease factorial dataset
+
+2026 study: CHB, LC, and HCC with LGDHS, LDSDS, and LKYDS; total n=132;
+PBMC transcriptomics.
+
+This is conceptually the strongest currently identified dataset because
+it directly contains: - same syndrome across different Western diseases;
+and - different syndromes within the same Western disease.
+
+Current status: publication identified, but a public accession for the
+discovery expression matrix has not been verified. Obtain from authors
+or an official repository before use.
+
+Cross-omics external evidence — AECOPD
+
+Published AECOPD study: phlegm-heat congesting lung (PH) n=41 and
+phlegm-damp amassing lung (PD) n=28 with serum metabolomics before/after
+treatment.
+
+Raw data are stated to be available from authors. Because this is
+metabolomics and treatment-response focused, it is not a primary
+transcriptomic DCSMI validation set. It may become a cross-omics
+extension after the transcriptomic method is frozen.
+
+Disease-signature compendium — CREEDS / SigCom LINCS
+
+CREEDS provides manually curated and automatically extracted disease
+expression signatures from GEO and is available through SigCom LINCS.
+
+Use: - independent disease-background discovery; - predeclared
+cross-disease negative controls; - broad disease-context specificity
+analysis.
+
+CREEDS is not syndrome ground truth.
+
+Clinical relation resource — SoFDA
+
+SoFDA contains curated syndrome, disease, and formula relationships.
+
+Allowed DCSMI uses: - syndrome ontology/aliases; - syndrome → formula
+relation for constructing independent treatment priors, subject to
+leakage restrictions.
+
+For a benchmark in which SoFDA supplies the syndrome prior, SoFDA
+disease–syndrome scores/genes may not be used as validation truth.
+
+------------------------------------------------------------------------
+
+20. Relation-recovery analysis
+
+Because clinical syndrome databases are incomplete and absence of a
+syndrome–disease link is not a reliable biological negative, DCSMI v1.0
+will not use ordinary AUROC/AUPRC with all unrecorded pairs treated as
+negatives.
+
+If an independent disease–syndrome relation set is available, use
+positive/unlabelled ranking:
+
+For each disease: - rank all eligible syndrome priors by R_(d,s); -
+calculate percentile rank of independently documented syndrome labels; -
+compare mean observed percentile rank against 10,000 random label sets
+matched for the number of positive labels.
+
+This is secondary construct validation.
+
+------------------------------------------------------------------------
+
+21. Required baselines / ablations
+
+Every primary validation must report:
+
+1.  DCSMI full: D_d × Aplus_s
+
+2.  Syndrome-only: Aplus_s
+
+3.  Disease-only: D_d
+
+4.  Uncalibrated syndrome target-module mass: Q_s
+
+5.  Complete target profile versus structurally calibrated target
+    profile.
+
+For the three current lung syndromes only: 6. complete versus
+shared/specific prior sensitivity.
+
+RWR is not a primary DCSMI component because the already frozen RWR
+analysis showed strong re-collapse of syndrome profiles. Any RWR
+analysis is secondary sensitivity only and cannot replace DCSMI primary
+inference.
+
+------------------------------------------------------------------------
+
+22. Implementation freeze sequence
+
+Before the first locked-test result:
+
+1.  acquire/freeze Hallmark 2026.1.Hs gene sets;
+2.  construct generic external syndrome priors without patient omics;
+3.  audit independent disease-background cohorts;
+4.  implement DCSMI equations;
+5.  pass unit tests:
+    -   deterministic output;
+    -   weight conservation;
+    -   within-stratum permutation invariants;
+    -   node/gene order invariance;
+    -   synthetic positive control;
+    -   synthetic null control;
+6.  run primary validation datasets;
+7.  fix only demonstrated coding/QA errors, never inferential choices;
+8.  freeze implementation code SHA256;
+9.  open locked test;
+10. after test is complete, apply to CAP.
+
+Any change to equations, module universe, null, endpoint, multiplicity,
+syndrome-prior construction, or dataset role after observing a relevant
+DCSMI result requires a new version (v1.1 or later) and must be labeled
+exploratory relative to v1.0.
+
+------------------------------------------------------------------------
+
+23. CAP interpretation rules after DCSMI validation
+
+If DCSMI v1.0 is externally supported: CAP outputs may be presented as
+externally benchmarked predictions of disease-conditioned syndrome
+mechanisms.
+
+If DCSMI is proof-of-concept only: CAP outputs remain
+hypothesis-generating.
+
+If DCSMI is not externally validated: CAP outputs cannot be used as
+evidence for syndrome molecular mechanisms and the paper should remain a
+bias-aware stress-testing/methodological study.
+
+Regardless of validation status: no CAP DCSMI output establishes
+therapeutic reversal, treatment efficacy, causality, or clinical
+diagnostic equivalence.
+
+------------------------------------------------------------------------
+
+24. Frozen central hypothesis
+
+Primary methodological hypothesis
+
+An independently constructed treatment-informed syndrome prior, after
+explicit correction for herb-target database structure, can be
+conditioned on an independently measured Western-disease molecular state
+to predict the module-level molecular differences observed among TCM
+syndromes within that disease.
+
+Falsification condition
+
+If structurally calibrated treatment priors fail to predict held-out
+syndrome-labelled patient omics, or if adding the Western-disease state
+does not improve prediction over the syndrome prior alone, the central
+DCSMI hypothesis is not supported.
+
+This falsification rule is frozen before DCSMI validation results are
+computed.

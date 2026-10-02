@@ -1,0 +1,85 @@
+DCSMI URTI B1 — TWO-SYNDROME P3 AMENDMENT v1.0
+=================================================
+
+STATUS: FROZEN_PRE_RESULT_METHOD_AMENDMENT
+URTI endpoint results inspected: NO
+Scope: URTI P3 only.
+
+1. IDENTIFIABILITY PROBLEM
+--------------------------
+For a two-group direct contrast:
+
+    Z(WC vs WH) = - Z(WH vs WC)
+
+The frozen observed-state construction is direction-agnostic and uses |Zobs|.
+Therefore:
+
+    |Z(WC vs WH)| = |Z(WH vs WC)|
+
+and hence the two nominal syndrome observed profiles are identical:
+
+    O_WH = O_WC = O
+
+The originally intended own-versus-other selectivity endpoint,
+
+    C_s = rho(M_s, O_s) - rho(M_s, O_other),
+
+therefore gives:
+
+    C_WH = 0
+    C_WC = 0
+
+by construction, independent of biology or data quality.
+
+2. PRE-RESULT DECISION
+----------------------
+URTI P3 is designated:
+
+    NOT_IDENTIFIABLE / NOT_TESTED
+
+It must be reported as NA, not as a negative biological result.
+
+No replacement primary P3 is introduced.
+
+Rationale:
+A signed or direction-specific replacement would change the frozen observed-state
+estimand (|Z|-based direction-agnostic O) and would therefore constitute a new
+scientific endpoint rather than a minimal code repair. Such an endpoint can be
+developed prospectively in a future validation dataset, but not retrofitted here.
+
+3. WHAT REMAINS UNCHANGED
+-------------------------
+- WH/WC syndrome definitions
+- T_WH and T_WC
+- primary disease-background selection
+- |Zobs|-based observed-state construction
+- Hallmark space
+- P1
+- P2
+- structural-null principles
+- seed / planned replicate counts
+- multiplicity principle
+
+4. OPTIONAL SECONDARY DESCRIPTIVE QUANTITY
+------------------------------------------
+After primary execution, the following may be shown descriptively:
+
+    prediction_separation =
+        rho(M_WH, O) - rho(M_WC, O)
+
+This is NOT P3.
+It is NOT a confirmatory endpoint.
+It must NOT be used to rescue primary syndrome-specificity claims.
+It must NOT enter the primary P3 Holm family.
+
+5. INTERPRETATION
+-----------------
+Psoriasis (three syndromes) remains capable of testing the prespecified
+own-versus-other P3 selectivity construct.
+
+URTI (two syndromes, one direction-agnostic direct contrast) can test patient
+correspondence through P1 and disease-conditioning gain through P2, but cannot
+identify the same own-versus-other P3 selectivity estimand.
+
+This limitation should be reported explicitly as a design property, not hidden
+and not interpreted as evidence that WH and WC are biologically identical.

@@ -1,0 +1,43 @@
+{
+  "document": "DCSMI_URTI_B1_TwoSyndrome_P3_Amendment_v1_0",
+  "status": "FROZEN_PRE_RESULT_METHOD_AMENDMENT",
+  "endpoint_results_inspected": false,
+  "scope": "URTI two-syndrome P3 only",
+  "unchanged": [
+    "WH/WC syndrome definitions",
+    "treatment priors T_WH and T_WC",
+    "primary disease background identity",
+    "direction-agnostic observed profile construction using |Zobs|",
+    "Hallmark space",
+    "P1 definition",
+    "P2 definition",
+    "structural-null generation principles",
+    "seed and planned replicate counts",
+    "multiplicity principle"
+  ],
+  "mathematical_issue": {
+    "direct_contrast": "Z_WCvsWH = -Z_WHvsWC",
+    "direction_agnostic_transform": "|Z_WCvsWH| = |Z_WHvsWC|",
+    "consequence": "O_WH = O_WC",
+    "original_P3": "C_s = rho(M_s,O_s) - rho(M_s,O_other)",
+    "degeneracy": "C_WH = C_WC = 0 identically"
+  },
+  "decision": {
+    "primary_P3_for_URTI": "NOT_IDENTIFIABLE / NOT_TESTED",
+    "interpretation": "URTI cannot provide an own-versus-other patient-profile P3 selectivity test under the frozen direction-agnostic two-group observed-state construction.",
+    "no_replacement_primary_endpoint": true,
+    "reason": "Introducing a new signed or contrast-difference P3 would change the frozen observed-state estimand rather than merely repair code."
+  },
+  "allowed_secondary_descriptive_quantity": {
+    "name": "prediction_separation",
+    "formula": "rho(M_WH,O) - rho(M_WC,O)",
+    "status": "SECONDARY_DESCRIPTIVE_ONLY",
+    "restriction": "Must not be called P3, must not be used to rescue Level-2/Level-3 primary support, and must not enter the primary P3 Holm family."
+  },
+  "manuscript_consequence": {
+    "URTI_P1": "testable once execution inputs are restored",
+    "URTI_P2": "testable once patient-level bootstrap input is restored",
+    "URTI_P3": "structurally non-identifiable under frozen design; report as NA, not failed",
+    "cross_context_claim": "Psoriasis can test explicit multi-syndrome selectivity P3; URTI contributes correspondence evidence through P1/P2 but not the same P3 estimand."
+  }
+}

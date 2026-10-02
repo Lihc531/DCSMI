@@ -1,0 +1,32 @@
+Syndrome-Herb Evidence Weighting Rule v1.0
+STATUS: FROZEN
+
+Primary weight:
+W_hs = (m_hs + 0.5) / (M_s + 1)
+
+m_hs = number of independent eligible articles supporting herb h in syndrome s.
+M_s  = number of independent eligible articles assigned to syndrome s.
+
+Primary relations:
+- composition evidence D
+- syndrome tier A/B
+- complete/available composition when fields are present
+- explicit herb roles: base or conditional_addition
+- conditional additions are not pre-downweighted
+- unspecified herbs are never invented
+
+FULL:
+All eligible primary articles.
+
+LOPO:
+All pneumonia/CAP articles are excluded BEFORE evidence construction.
+LOPO is the primary representation intended for later CAP molecular alignment.
+
+Not used to define W:
+- GAT/GCN
+- CAP transcriptomic results
+- syndrome-specificity multiplier
+- prescription frequency as the independent evidence unit
+
+Canonical workbook SHA256:
+39c9aeb25e576baa7a32b880cc8856be38942e9d178b86af598dff0ea9fd7d43

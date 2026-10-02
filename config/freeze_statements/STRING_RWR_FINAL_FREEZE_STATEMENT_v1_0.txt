@@ -1,0 +1,125 @@
+STRING RWR v1.0 — FINAL METHOD/ROLE FREEZE
+Audited: 2026-09-21
+
+STATUS
+------
+COMPUTATIONAL IMPLEMENTATION: PASS / FROZEN
+PRIMARY SYNDROME REPRESENTATION: NO-GO
+SECONDARY NETWORK-LOCALIZATION / SENSITIVITY LAYER: GO / FROZEN
+
+UPSTREAM
+--------
+Frozen seed file:
+LOPO_FROZEN_primary_target_weights_for_RWR_v1_1.csv
+SHA256 recorded by run:
+9256cd3fe7ae142a91c7e081d97ba8a9225aa5aea3434c5f5673d53e5a10c9ef
+
+No CAP transcriptomic data were used to choose the network, restart probability,
+or upstream target representation.
+
+NETWORK
+-------
+STRING declared version: 12.0
+Species: Homo sapiens
+Network semantics: functional association network
+Threshold: combined_score >= 700
+Edge weighting: STRING combined score
+Input edge SHA256:
+a816abbba6616bcd0d48defb131c8765fa3768bf28bd06ad1c5b50ccd16b9e9f
+
+Final cleaned network:
+16,194 nodes
+236,837 undirected edges
+126 connected components
+Largest component: 15,875 nodes
+
+RWR
+---
+P = D^(-1) A, with P row-stochastic.
+For a column probability vector:
+p_next = r*p0 + (1-r)*(P.T @ p)
+
+Primary restart:
+r = 0.5
+
+Predeclared sensitivity:
+r = 0.3 and r = 0.7
+
+SEED MAPPING
+------------
+PDOL: 325/329 targets mapped; 98.7863% frozen seed weight retained.
+PHOL: 345/350 targets mapped; 98.6812% frozen seed weight retained.
+WHIL: 344/350 targets mapped; 97.3250% frozen seed weight retained.
+
+All mapped seed weight was in one seeded STRING component.
+
+NUMERICAL QA
+------------
+All r=0.3/0.5/0.7 runs converged.
+Maximum probability-mass error: 3.33e-16.
+Analytic toy-network test: PASS.
+Determinism test: PASS.
+Node-order invariance test: PASS.
+
+REPRESENTATION AUDIT
+--------------------
+Before RWR, mapped-seed Spearman correlations:
+PDOL-PHOL: 0.926756
+PDOL-WHIL: 0.945516
+PHOL-WHIL: 0.949861
+
+After primary r=0.5 RWR:
+PDOL-PHOL: 0.995428
+PDOL-WHIL: 0.991987
+PHOL-WHIL: 0.995103
+
+Thus RWR substantially increases global similarity among syndrome profiles.
+This is treated as a property of network smoothing, not as a software error.
+
+Top-50 rank structure remains partly differentiated at r=0.5:
+PDOL-PHOL Jaccard: 0.492537
+PDOL-WHIL Jaccard: 0.369863
+PHOL-WHIL Jaccard: 0.587302
+
+ROLE DECISION
+-------------
+The frozen non-diffused LOPO ubiquity-corrected target profile remains the
+PRIMARY syndrome molecular representation.
+
+STRING RWR r=0.5 is frozen only as a SECONDARY network-localization /
+sensitivity representation. It must not replace the primary target profile
+for claims of syndrome differentiation.
+
+RWR positive/nonzero target-set overlap is not a valid differentiation metric,
+because diffusion makes every node in the seeded giant component positive.
+
+DOWNSTREAM POLICY
+-----------------
+1. Do not tune r, STRING threshold, edge weighting, or seed construction using
+   CAP results.
+2. Report r=0.3 and r=0.7 only as predeclared sensitivity analyses.
+3. Compare raw/frozen target-space alignment with RWR-based network-localized
+   alignment as an ablation/sensitivity analysis.
+4. Matched-null testing is performed only after the disease-alignment statistic
+   is frozen, using the same statistic for observed and null data.
+5. Later nulls should preserve seed-set size and weight distribution and match
+   network degree plus target-database ubiquity.
+6. Any future change to the above requires a new version and must not overwrite
+   v1.0.
+
+AUDITED OUTPUT SHA256
+---------------------
+RWR_PRIMARY_r0p50_scores_v1_0.csv
+b97e578a8dfcf95014e4d61c899434a02ab867edd7e08330f945da035d776978
+
+RWR_seed_mapping_QA_v1_0.csv
+d213280e5e9810d1fb9235ed76fd763f85a4eaa89408f5ac028e1e7bc0fd8134
+
+RWR_pairwise_similarity_v1_0.csv
+994edd69040b06fc111eb61c3a2f9151903195089cb47202f38e6cd517f38af9
+
+STRING_RWR_run_metadata_v1_0.json
+efd0c08b55d35c91eeb51b5e2bc060a01ec70b82e5313bd9d904c710f0ae773c
+
+Uploaded audited bundle:
+856a57ebb321c7e49c1c07feabbcc9a8ec5d3dd7f18837f82e2fb37d64f1c226

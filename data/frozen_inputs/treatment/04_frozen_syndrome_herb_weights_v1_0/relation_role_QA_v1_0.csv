@@ -1,0 +1,7 @@
+﻿syndrome_code,herb_role,unique_articles,unique_prescriptions,unique_herbs
+PDOL,base,41,41,94
+PDOL,conditional_addition,4,4,21
+PHOL,base,75,75,131
+PHOL,conditional_addition,9,9,60
+WHIL,base,39,39,110
+WHIL,conditional_addition,6,6,28

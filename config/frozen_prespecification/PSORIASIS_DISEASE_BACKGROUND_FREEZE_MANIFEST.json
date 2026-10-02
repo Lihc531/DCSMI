@@ -1,0 +1,14 @@
+{
+  "status": "SECONDARY_STRESS_TEST",
+  "cohorts": [
+    {
+      "path": "/mnt/data/DCSMI_independent_disease_background_inputs_v1_0/GSE147339_psoriasis_vs_control_ALL_GENES.csv",
+      "sha256": "420ee055777de3007cb7d8f7f4be13e9974b2c7aa4aaa539c404b24f7fd3f1bb"
+    },
+    {
+      "path": "/mnt/data/DCSMI_independent_disease_background_inputs_v1_0/GSE61281_psoriasis_vs_control_ALL_GENES.csv",
+      "sha256": "e91b6e0052d139fc836739c0f003ba91306e3e68beaea815894ebcdd3616c65e"
+    }
+  ],
+  "rule": "signed Z; equal-weight Stouffer if two cohorts; no FDR/FC prefilter"
+}
