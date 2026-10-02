@@ -1,0 +1,28 @@
+{
+  "seed": 20260922,
+  "N_null": 10000,
+  "target_universe_n": 374,
+  "GO_gaf_headers": [
+    "!gaf-version: 2.2",
+    "!generated-by: UniProt",
+    "!date-generated: 2026-07-28 19:42",
+    "!go-version: http://purl.obolibrary.org/obo/go/releases/2026-07-26/extensions/go-plus.ofn"
+  ],
+  "GO_obo_data_version": "data-version: releases/2026-07-26",
+  "hashes": {
+    "HUMAN-uniprot.gaf.gz": "a0afba19dfb1f8fa996bc1bdcd61fd0c9bd4cf0d2bf2509d09ac86993c0e70a2",
+    "go-basic.obo": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+    "KEGG_hsa_gene_to_pathway_2026-09-27.txt": "886d8b476660b7bc8df142ef1c2a786c1c4a62cbb9de7152e133a9e6dd5e53aa",
+    "KEGG_hsa_pathway_names_2026-09-27.txt": "6662aea9ec085f387c0555a6248cecdb3803626fbad3278f4dcb93cd06ef0e69",
+    "KEGG_info_2026-09-27.txt": "383b5003ee8389baf68f99b13430bd7fc6b9436493899b9e3bc813ac4d5a91df",
+    "LOPO_SHARED_SPECIFIC_primary_target_profiles_v1_0.csv": "af66b3f49961b7a0e578e35b6c9bb86b7c84007f4c68d7efa4c286e6b9b85669",
+    "matched_null_target_universe_and_strata_v1_0_1.csv": "a3871d4da3b3f4005833875f4e8d7c11e529214f6f93a95255f5acc5fffef297",
+    "SYMBOL_ENTREZ_annotation.xlsx": "18e0d37874627d07003f835d0f21c60a7eb14f352d129883dea0ac6a67aef4d2"
+  },
+  "mapping": {
+    "GO": "exact GAF gene symbol; BP direct annotations propagated through go-basic is_a and part_of; NOT excluded",
+    "KEGG": "exact project-local org.Hs.eg.db SYMBOL->ENTREZ; ambiguous symbols excluded",
+    "unmapped_rule": "remain in 374-target universe with zero functional membership"
+  },
+  "eligibility": ">=5 frozen targets; >187 targets excluded from primary differential"
+}

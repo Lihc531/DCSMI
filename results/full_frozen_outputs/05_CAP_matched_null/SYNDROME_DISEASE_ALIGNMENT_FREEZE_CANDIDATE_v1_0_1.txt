@@ -1,0 +1,49 @@
+SYNDROME–DISEASE ALIGNMENT + MATCHED NULL v1.0.1
+FREEZE CANDIDATE — REQUIRES OUTPUT AUDIT
+
+Primary syndrome representation:
+LOPO frozen ubiquity-corrected target weights.
+
+Primary CAP representation:
+all 12,083 frozen shared genes, equal-weight signed-Z Stouffer meta-Z.
+
+Primary alignment:
+A_raw(S) =
+sum_g w_g * I_CAP(g) * Z_CAP,g
+--------------------------------
+sum_g w_g * I_CAP(g)
+
+Secondary network-localization alignment:
+STRING RWR r=0.5
+
+Matched null:
+N = 10,000
+random seed = 20260921
+universe = frozen TCM-ID target-database universe (374 genes)
+matching = value-based STRING unweighted-degree quartile x target-herb-ubiquity quartile; tied values remain together
+permutation = entire syndrome weight vector including zeros within each stratum
+same stratum permutation shared across syndromes in each null replicate
+
+Primary positive-alignment empirical P:
+P_upper = (1 + # null >= observed)/(N + 1)
+
+Also report:
+P_lower, two-sided P around null mean, and Z_align.
+
+RWR null:
+computed with the exact adjoint stationary-RWR identity and cross-checked
+against the frozen observed RWR score vectors.
+Maximum observed RWR alignment cross-check error:
+1.407e-13
+
+Important:
+1. Do not tune target weights, STRING, r, CAP meta-Z, or matching bins after
+   inspecting these results.
+2. Positive CAP meta-Z means higher expression in CAP than healthy control.
+3. Alignment is disease-context localization, not therapeutic reversal.
+4. Raw frozen target alignment is primary.
+5. RWR is secondary/sensitivity only.
+6. Shared/specific decomposition is not reconstructed here and must not be
+   invented from downstream CAP results.
+7. Final freeze requires audit of coverage, null invariants, null variance,
+   and observed-vs-null results.

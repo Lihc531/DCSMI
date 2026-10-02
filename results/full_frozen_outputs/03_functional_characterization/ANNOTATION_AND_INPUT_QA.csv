@@ -1,0 +1,11 @@
+metric,value,status
+PDOL_complete_sum,1.0,PASS
+PHOL_complete_sum,1.0,PASS
+WHIL_complete_sum,1.0,PASS
+target_universe_n,374.0,PASS
+matched_strata_n,19.0,PASS
+GO_exact_direct_annotated_targets,367.0,PASS
+GO_BP_terms_intersecting_targets,5547.0,PASS
+KEGG_exact_symbol_entrez_targets,373.0,PASS
+KEGG_targets_with_pathway,338.0,PASS
+KEGG_pathways_intersecting_targets,311.0,PASS

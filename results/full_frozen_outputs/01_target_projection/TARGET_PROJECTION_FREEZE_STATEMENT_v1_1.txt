@@ -1,0 +1,26 @@
+FROZEN TARGET PROJECTION v1.1
+Status: FROZEN_UPSTREAM_BEFORE_CAP_ALIGNMENT
+
+Primary downstream representation:
+  LOPO ubiquity_corrected_sum1
+
+Frozen formula:
+  W_hs = article-balanced LOPO syndrome-herb evidence weight
+  degree-normalized contribution = W_hs / |T_h|
+  IDF_t = log((N_H + 1)/(n_t + 1)) + 1
+  target score = sum_h [W_hs / |T_h| * IDF_t]
+  final syndrome target vector is normalized to sum 1
+
+IDF reference universe:
+  study_target_database_herbs_with_at_least_one_valid_target
+  N_H is computed from unique herbs with >=1 valid target in the completed
+  study target table; processed-form aliases do not create additional IDF herbs.
+
+Frozen target-layer processed-form mappings:
+  制陈皮 -> 陈皮
+  炙百部 -> 百部
+  焦山楂 -> 山楂
+
+Prescription-layer herb identities remain unchanged.
+No CAP transcriptomic outcome was used to select or tune this projection.
+Any future change requires a new projection version.

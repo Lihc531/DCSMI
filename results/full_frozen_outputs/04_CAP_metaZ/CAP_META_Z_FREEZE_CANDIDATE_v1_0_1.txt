@@ -1,0 +1,45 @@
+CAP TRANSCRIPTOMIC META-Z v1.0.1 — FREEZE CANDIDATE
+
+PRIMARY DISEASE REPRESENTATION
+------------------------------
+Cohorts: GSE103119 and GSE196399
+Contrast: CAP - healthy control in both cohorts
+Shared-gene universe: 12083
+
+Per-cohort statistic:
+Z_i = sign(logFC_i) * Phi^(-1)(1 - P_i/2)
+
+Primary equal-weight Stouffer statistic:
+Z_meta = (Z_GSE103119 + Z_GSE196399) / sqrt(2)
+
+Primary downstream disease vector:
+CAP_CONTINUOUS_PRIMARY_equal_weight_metaZ_v1_0_1.csv
+Use ALL shared genes; do not prefilter the continuous vector by FDR.
+
+Direction-consistent descriptive module:
+meta FDR < 0.05 AND same logFC sign in both cohorts
+N = 8048
+UP = 4001
+DOWN = 4047
+
+Strict replicated-DEG sensitivity module:
+both cohort FDR < 0.05
+both |logFC| >= 1.0
+same direction
+N = 513
+UP = 360
+DOWN = 153
+
+Cross-cohort reproducibility:
+logFC Spearman = 0.708852
+signed-Z Spearman = 0.716382
+direction concordance = 0.783001
+
+effective-N weighted sensitivity vs equal-weight meta-Z Spearman =
+0.999891
+
+STATUS
+------
+FREEZE CANDIDATE ONLY. Audit current gene-universe size, cross-cohort
+reproducibility, direction-consistent module size, and sensitivity stability.
+Do not use syndrome alignment results to change this disease-layer method.

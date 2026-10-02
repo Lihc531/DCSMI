@@ -1,0 +1,19 @@
+PHASE 12A — DEGREE-PRESERVING HERB–TARGET CONVERGENCE NULL v1.0
+RESULT FREEZE CANDIDATE — AWAITING INDEPENDENT AUDIT
+
+Technical QA pass: True
+Observed GJSD: 0.0527603500918
+Null mean GJSD: 0.0401465307726
+Null SD: 0.00333729990673
+Z vs null: 3.779648
+Primary lower-tail empirical P: 0.997200279972
+Diagnostic upper-tail empirical P: 0.002899710029
+Diagnostic two-sided empirical P: 0.00579942005799
+Pooled four-chain R-hat: 0.99994349
+Max frozen-profile reconstruction error: 1.110e-16
+
+Frozen interpretation:
+PRIMARY_NOT_SUPPORTED_OPPOSITE_DEPARTURE: the prespecified convergence hypothesis is not supported; instead, observed profiles are more divergent than expected under the exact degree-preserving null. This must not be relabeled as support for convergence.
+
+No CAP transcriptomic data were used in Phase 12A.
+Do not alter the null model/statistic after this result. Any change requires a new version.

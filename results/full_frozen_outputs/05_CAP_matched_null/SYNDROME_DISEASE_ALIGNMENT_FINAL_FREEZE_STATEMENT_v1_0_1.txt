@@ -1,0 +1,162 @@
+SYNDROME–DISEASE ALIGNMENT + MATCHED NULL v1.0.1
+FINAL FREEZE STATEMENT
+Audited: 2026-09-21
+
+STATUS
+------
+PRIMARY RAW-TARGET ALIGNMENT: GO / FROZEN
+MATCHED NULL: GO / FROZEN
+STRING RWR ALIGNMENT: GO / FROZEN AS SECONDARY NETWORK-LOCALIZATION ANALYSIS
+v1.0: RETAIN FOR AUDIT PROVENANCE ONLY; DO NOT USE FOR FINAL INFERENCE
+
+FROZEN INPUTS
+-------------
+LOPO frozen syndrome target weights:
+SHA256 9256cd3fe7ae142a91c7e081d97ba8a9225aa5aea3434c5f5673d53e5a10c9ef
+
+Target-database target ubiquity:
+SHA256 7a714cbfadd44033aabcc7178d4ff045bbc826f6cc5606705acc76fcad002bba
+
+CAP continuous equal-weight meta-Z:
+SHA256 168d9a23c06df388b69f73d92b2e7811b1f5332dfb507893511367fd752be58e
+
+STRING clean high-confidence edges:
+SHA256 deb2d74bdf0bcb7f249883c39d18bfecab9c9e9f5567612e0fc1fdc6db5ac6ba
+
+Frozen primary RWR scores:
+SHA256 b97e578a8dfcf95014e4d61c899434a02ab867edd7e08330f945da035d776978
+
+PRIMARY ALIGNMENT
+-----------------
+For syndrome S:
+
+A_raw(S) =
+sum_g w_g * I_CAP(g) * Z_CAP,g
+--------------------------------
+sum_g w_g * I_CAP(g)
+
+where w_g is the frozen LOPO ubiquity-corrected target weight and Z_CAP,g is
+the frozen equal-weight signed-Z Stouffer CAP meta-Z.
+
+Observed primary alignment:
+PDOL = 0.737001
+PHOL = 0.824696
+WHIL = 1.018724
+
+CAP-measured frozen target-weight mass:
+PDOL = 0.603687
+PHOL = 0.595610
+WHIL = 0.607792
+
+MATCHED NULL
+------------
+Null universe:
+374 frozen TCM-ID target-database genes.
+
+Matching:
+- value-based STRING unweighted-degree quartiles;
+- value-based target-herb-ubiquity quartiles over the complete target universe;
+- identical matching values are never split;
+- non-STRING genes use NO_STRING as the degree category but retain ubiquity
+  stratification.
+
+Final matched strata: 19.
+
+Permutation:
+The complete syndrome weight vector, INCLUDING zeros, is permuted within each
+matched stratum. The same stratum permutation is shared across the three
+syndromes in each replicate.
+
+This preserves exactly:
+- the global multiset of weights;
+- the global positive/zero target count;
+- the positive/zero count within each matched stratum;
+- the total syndrome target weight within each matched stratum;
+- the frozen target-database universe.
+
+Null replicates:
+N = 10,000
+random seed = 20260921
+empirical P = (count + 1)/(N + 1)
+
+PRIMARY OBSERVED VS NULL
+------------------------
+PDOL:
+observed = 0.737001
+null mean = 1.122223
+Z_align = -1.234083
+upper-tail P = 0.888611
+two-sided P = 0.217678
+
+PHOL:
+observed = 0.824696
+null mean = 1.097215
+Z_align = -0.875947
+upper-tail P = 0.814419
+two-sided P = 0.368963
+
+WHIL:
+observed = 1.018724
+null mean = 1.111084
+Z_align = -0.469884
+upper-tail P = 0.676732
+two-sided P = 0.645735
+
+FROZEN PRIMARY INTERPRETATION
+-----------------------------
+All three observed raw-target alignment scores are positive on the CAP signed
+meta-Z scale, but none exceeds the degree- and target-ubiquity-matched
+TCM-ID target background.
+
+Therefore a positive raw alignment score must NOT be interpreted as evidence
+of syndrome-specific CAP correspondence by itself.
+
+The matched-null result supports a strong shared/database-background component
+and does not provide evidence that any of the three complete syndrome target
+profiles has positive CAP alignment beyond that matched background.
+
+This is disease-context localization, NOT therapeutic reversal and NOT
+evidence of treatment efficacy.
+
+SECONDARY STRING RWR
+--------------------
+Observed:
+PDOL = 0.929610
+PHOL = 0.980229
+WHIL = 1.082914
+
+Matched-null upper-tail P:
+PDOL = 0.889111
+PHOL = 0.792821
+WHIL = 0.611939
+
+RWR therefore does not change the primary qualitative conclusion.
+
+The adjoint stationary-RWR implementation reproduces the frozen observed RWR
+alignment with maximum absolute error 1.407e-13.
+
+PAIRWISE SYNDROME DIFFERENCES
+-----------------------------
+No raw-target or RWR pairwise syndrome difference shows evidence of departure
+from the paired matched-null distribution. These comparisons are descriptive
+and must not be used to rank syndromes.
+
+SENSITIVITY
+-----------
+Using the effective-N-weighted CAP meta-Z instead of the equal-weight CAP
+meta-Z does not change the qualitative conclusion.
+
+FREEZE POLICY
+-------------
+1. Do not alter syndrome target weights, CAP meta-Z, STRING threshold,
+   STRING edge weights, RWR restart probability, matching variables, matching
+   bins, or null universe after inspecting these results.
+2. Raw frozen target alignment is the primary analysis.
+3. STRING RWR is secondary network-localization/sensitivity only.
+4. Use v1.0.1, not v1.0, for final inference.
+5. Any future change to the complete-profile alignment/null method requires a
+   new version and must not overwrite v1.0.1.
+6. Shared/specific decomposition is NOT contained in this freeze. It must be
+   constructed upstream from observed-only syndrome-herb weights with
+   unobserved herb = 0, projected through the already frozen target transform,
+   and then evaluated without CAP-driven tuning.

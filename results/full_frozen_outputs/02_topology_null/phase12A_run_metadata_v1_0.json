@@ -1,0 +1,64 @@
+{
+  "analysis_name": "Degree-preserving herb-target convergence null v1.0",
+  "phase": "12A",
+  "created_utc": "2026-09-22T14:44:29+00:00",
+  "status": "FULL_NULL_COMPLETED_AWAITING_FINAL_AUDIT",
+  "CAP_transcriptomics_used": false,
+  "RWR_used": false,
+  "pathway_enrichment_used": false,
+  "frozen_representation": "LOPO ubiquity_corrected_sum1",
+  "input_files": {
+    "canonical_pairs": "E:\\00project\\Tanre Yongfei\\重构\\05_weighted_herb_target_projection_v1_1_FROZEN\\canonical_herb_target_pairs_v1_1.csv",
+    "mapping": "E:\\00project\\Tanre Yongfei\\重构\\05_weighted_herb_target_projection_v1_1_FROZEN\\FROZEN_herb_to_target_mapping_dictionary_v1_1.csv",
+    "frozen_primary": "E:\\00project\\Tanre Yongfei\\重构\\05_weighted_herb_target_projection_v1_1_FROZEN\\LOPO_FROZEN_primary_target_weights_for_RWR_v1_1.csv",
+    "target_ubiquity": "E:\\00project\\Tanre Yongfei\\重构\\05_weighted_herb_target_projection_v1_1_FROZEN\\target_database_target_ubiquity_v1_1.csv"
+  },
+  "input_sha256": {
+    "canonical_pairs": "a6b283fe945885046b78141a94b6474d1acdef41a4ace8e941096fee95dff983",
+    "mapping": "709fac26761667242c5754e4bc7c67be047f9398aea010542e25d195eea95e66",
+    "frozen_primary": "9256cd3fe7ae142a91c7e081d97ba8a9225aa5aea3434c5f5673d53e5a10c9ef",
+    "target_ubiquity": "7a714cbfadd44033aabcc7178d4ff045bbc826f6cc5606705acc76fcad002bba"
+  },
+  "graph": {
+    "n_herbs": 172,
+    "n_targets": 374,
+    "n_edges": 13285,
+    "max_target_degree_crosscheck_error": 0
+  },
+  "null": {
+    "algorithm": "Curveball row trades on simple bipartite herb-target graph",
+    "n_null": 10000,
+    "n_chains": 4,
+    "nulls_per_chain": 2500,
+    "master_seed": 20260922,
+    "burn_in_trade_attempts_per_chain": 17200,
+    "thinning_trade_attempts_between_retained_graphs": 860,
+    "preserves_exact_herb_degrees": true,
+    "preserves_exact_target_degrees": true
+  },
+  "primary": {
+    "statistic": "generalized Jensen-Shannon divergence, log base 2",
+    "direction": "lower tail = more convergence",
+    "empirical_p_definition": "(1 + count(null <= observed)) / (N + 1)",
+    "alpha": 0.05
+  },
+  "QA": {
+    "profile_reconstruction_max_abs_error": 1.1102230246251565e-16,
+    "profile_reconstruction_tolerance": 1e-12,
+    "all_degree_checks_pass": true,
+    "gjsd_rhat": 0.9999434865679505,
+    "rhat_pass_threshold": 1.01,
+    "abs_lag1_acf_pass_threshold": 0.1,
+    "all_mixing_checks_pass": true,
+    "technical_pass": true
+  },
+  "primary_result": {
+    "observed_gjsd": 0.05276035009180232,
+    "null_mean_gjsd": 0.04014653077261113,
+    "z_vs_null": 3.779648120252019,
+    "empirical_p_lower_PRIMARY": 0.9972002799720028,
+    "empirical_p_upper_diagnostic": 0.0028997100289971,
+    "empirical_p_two_sided_diagnostic": 0.0057994200579942
+  },
+  "frozen_interpretation_rule_applied": "PRIMARY_NOT_SUPPORTED_OPPOSITE_DEPARTURE: the prespecified convergence hypothesis is not supported; instead, observed profiles are more divergent than expected under the exact degree-preserving null. This must not be relabeled as support for convergence."
+}

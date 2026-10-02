@@ -1,0 +1,28 @@
+{
+  "status": "NO_PRIMARY_FUNCTIONAL_ANCHOR",
+  "positive_anchor_exists": false,
+  "decision_rule": "At least one GO-BP or KEGG primary family contains Delta>0 and BH-FDR q<0.05",
+  "claim_scope": "treatment-informed/prescription-derived functional organization only; not patient syndrome mechanism",
+  "families": [
+    {
+      "family": "GO_BP",
+      "eligible_terms": 1560,
+      "primary_tests": 4680,
+      "primary_positive_n": 0,
+      "primary_positive_terms_n": 0,
+      "min_primary_q": 0.7997537654547503,
+      "specific_sensitivity_positive_n": 0,
+      "shared_annotation_q_lt_0_05_n": 0
+    },
+    {
+      "family": "KEGG",
+      "eligible_terms": 207,
+      "primary_tests": 621,
+      "primary_positive_n": 0,
+      "primary_positive_terms_n": 0,
+      "min_primary_q": 0.8293956318653849,
+      "specific_sensitivity_positive_n": 0,
+      "shared_annotation_q_lt_0_05_n": 0
+    }
+  ]
+}

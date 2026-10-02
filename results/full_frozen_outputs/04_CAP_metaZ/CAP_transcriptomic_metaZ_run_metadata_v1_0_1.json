@@ -1,0 +1,94 @@
+{
+  "analysis_name": "CAP transcriptomic signed-Z meta-analysis v1.0.1",
+  "created_utc": "2026-09-21T18:25:11+00:00",
+  "status": "DISEASE_LAYER_FREEZE_CANDIDATE_REQUIRES_OUTPUT_AUDIT",
+  "disease_context": "community-acquired pneumonia",
+  "cohorts": {
+    "GSE103119": {
+      "cohort": "GSE103119",
+      "input_file": "E:\\00project\\Tanre Yongfei\\重构\\GSE103119_gene_level_all.csv",
+      "input_sha256": "e08afc9786b9d89ab402028a2f80f4e99169bd86392156cad4e4ad7c6b1e4490",
+      "detected_gene_column": "SYMBOL",
+      "rows_input": 14827,
+      "valid_unique_genes": 14827,
+      "direction_multiplier": 1,
+      "min_p_value": 9.04688149300821e-19,
+      "max_abs_signed_z": 8.84630003944535,
+      "t_logFC_sign_agreement": 1.0
+    },
+    "GSE196399": {
+      "cohort": "GSE196399",
+      "input_file": "E:\\00project\\Tanre Yongfei\\重构\\GSE196399_gene_level_all.csv",
+      "input_sha256": "997f4d62ac4d6229c32b1f1eeda2db0f79f33335c9310821e854ff07efca33a2",
+      "detected_gene_column": "SYMBOL",
+      "rows_input": 16596,
+      "valid_unique_genes": 16596,
+      "direction_multiplier": 1,
+      "min_p_value": 1.25636636373632e-24,
+      "max_abs_signed_z": 10.244218058489238,
+      "t_logFC_sign_agreement": 1.0
+    }
+  },
+  "contrast_orientation": "CAP minus healthy control in both cohorts",
+  "primary_gene_universe": "intersection of valid unique gene symbols in the two CURRENT gene-level all-results files",
+  "primary_meta_method": {
+    "cohort_statistic": "signed Z = sign(logFC) * Phi^-1(1 - two-sided P/2)",
+    "combination": "equal-weight Stouffer",
+    "formula": "Z_meta=(Z_GSE103119+Z_GSE196399)/sqrt(2)",
+    "multiple_testing": "Benjamini-Hochberg over shared gene universe",
+    "continuous_vector": "ALL shared genes; no FDR filtering"
+  },
+  "direction_consistent_module": {
+    "meta_FDR_threshold": 0.05,
+    "requires_same_logFC_sign": true,
+    "role": "descriptive/set-based module; not primary continuous alignment vector"
+  },
+  "weighted_sensitivity": {
+    "method": "effective-two-group-sample-size weighted Stouffer",
+    "sample_counts": {
+      "GSE103119": {
+        "case": 152,
+        "control": 20
+      },
+      "GSE196399": {
+        "case": 56,
+        "control": 21
+      }
+    },
+    "effective_n_formula": "n_case*n_control/(n_case+n_control)",
+    "role": "predeclared sensitivity only"
+  },
+  "strict_replicated_DEG_sensitivity": {
+    "both_cohort_FDR_below": 0.05,
+    "both_cohort_abs_logFC_at_least": 1.0,
+    "requires_same_direction": true,
+    "role": "legacy continuity / sensitivity only"
+  },
+  "summary": {
+    "shared_gene_universe": 12083,
+    "logFC_spearman": 0.7088521210624917,
+    "logFC_spearman_p": 0.0,
+    "logFC_pearson": 0.70957864970124,
+    "logFC_pearson_p": 0.0,
+    "signedZ_spearman": 0.7163822900742499,
+    "signedZ_spearman_p": 0.0,
+    "signedZ_pearson": 0.7138300536674608,
+    "signedZ_pearson_p": 0.0,
+    "direction_concordance_fraction": 0.7830009103699412,
+    "metaFDR05_total": 8505,
+    "direction_consistent_metaFDR05_total": 8048,
+    "direction_consistent_metaFDR05_up": 4001,
+    "direction_consistent_metaFDR05_down": 4047,
+    "strict_replicated_DEG_total": 513,
+    "strict_replicated_DEG_up": 360,
+    "strict_replicated_DEG_down": 153,
+    "effective_n_GSE103119": 17.674418604651162,
+    "effective_n_GSE196399": 15.272727272727273,
+    "weighted_stouffer_weight_GSE103119": 4.204095456177364,
+    "weighted_stouffer_weight_GSE196399": 3.908033683673578,
+    "equal_vs_neff_weighted_metaZ_spearman": 0.9998913107488303,
+    "equal_vs_neff_weighted_metaZ_spearman_p": 0.0
+  },
+  "important_interpretation": "Positive meta-Z means higher expression in CAP than healthy control; negative meta-Z means lower expression. This is disease direction, not therapeutic reversal or efficacy.",
+  "downstream_freeze_policy": "Do not alter the meta-Z method, cohort direction, FDR threshold, or gene universe based on syndrome-target alignment results. Audit this output first, then freeze the disease layer before constructing observed-vs-null syndrome-disease alignment tests."
+}

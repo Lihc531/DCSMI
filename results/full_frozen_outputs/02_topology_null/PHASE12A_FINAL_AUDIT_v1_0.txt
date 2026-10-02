@@ -1,0 +1,77 @@
+PHASE 12A — DEGREE-PRESERVING HERB–TARGET CONVERGENCE NULL v1.0
+FINAL INDEPENDENT AUDIT
+Audit date: 2026-09-22
+Status: PASS / ELIGIBLE FOR FINAL FREEZE
+
+1. ARCHIVE / FILE INTEGRITY
+- Uploaded ZIP integrity test: PASS (no corrupt member).
+- 16 expected run-output files present.
+- Every entry in the run SHA256_MANIFEST_v1_0.csv independently re-hashed and matched exactly.
+
+2. FROZEN INPUT IDENTITY
+The run metadata records the exact formal frozen upstream SHA256 values:
+- canonical_herb_target_pairs_v1_1.csv
+  a6b283fe945885046b78141a94b6474d1acdef41a4ace8e941096fee95dff983
+- FROZEN_herb_to_target_mapping_dictionary_v1_1.csv
+  709fac26761667242c5754e4bc7c67be047f9398aea010542e25d195eea95e66
+- LOPO_FROZEN_primary_target_weights_for_RWR_v1_1.csv
+  9256cd3fe7ae142a91c7e081d97ba8a9225aa5aea3434c5f5673d53e5a10c9ef
+- target_database_target_ubiquity_v1_1.csv
+  7a714cbfadd44033aabcc7178d4ff045bbc826f6cc5606705acc76fcad002bba
+Independent re-hashing of the available frozen upstream files matched these values exactly.
+
+3. OBSERVED PROFILE RECONSTRUCTION
+Frozen LOPO ubiquity-corrected target profiles were reconstructed from the frozen graph/mapping.
+Maximum absolute target error:
+- PDOL: 9.8879e-17
+- PHOL: 1.1102e-16
+- WHIL: 9.8879e-17
+Tolerance was 1e-12. PASS.
+Independent recomputation of observed GJSD, common mass, pairwise JSD, and cosine metrics matched the saved values to floating-point precision.
+
+4. NULL DESIGN / DEGREE PRESERVATION
+- Graph: 172 herbs, 374 targets, 13,285 unique edges.
+- 4 independent Curveball chains x 2,500 retained graphs = 10,000 null graphs.
+- Burn-in: 17,200 trade attempts per chain.
+- Thinning: 860 trade attempts between retained graphs.
+- Master seed: 20260922.
+- All scheduled degree-preservation checks passed with herb-degree error=0, target-degree error=0, edge-count error=0.
+- Independent inspection of the first retained graph from each chain confirmed 13,285 unique edges, 172 herbs, 374 targets, and exact row/column degree preservation.
+- Curveball effective-trade fractions were approximately 0.827–0.831 during burn-in and 0.830 between retained samples.
+
+5. MIXING QA
+Each chain retained 2,500 graphs.
+GJSD lag-1 autocorrelations: 0.0267, 0.0438, 0.0368, 0.0448 (all |ACF1| < 0.10).
+Pooled four-chain R-hat: 0.99994349 (<=1.01).
+Chain means: 0.0401184, 0.0402229, 0.0401525, 0.0400923.
+Prespecified mixing criteria: PASS.
+All 10,000 GJSD values were unique; no duplicate metric rows were found.
+
+6. PRIMARY RESULT — INDEPENDENT RECOMPUTATION
+Prespecified primary statistic: generalized Jensen-Shannon divergence (GJSD), lower = more convergence.
+Observed GJSD: 0.0527603500918
+Null mean: 0.0401465307726
+Null SD: 0.00333729990673
+Z vs null: +3.77964812025
+Null 2.5%, 50%, 97.5%: 0.0342987562, 0.0399087383, 0.0473129262
+Prespecified lower-tail empirical P: 0.997200279972
+Diagnostic upper-tail empirical P: 0.002899710029
+Diagnostic two-sided 2*min-tail P: 0.005799420058
+All summary statistics and empirical P values were independently recomputed from the full 10,000-row null distribution and matched the saved output to floating-point precision.
+
+PRIMARY INTERPRETATION:
+The prespecified hypothesis that the observed syndrome target profiles are MORE convergent than expected from exact herb- and target-degree structure is NOT supported.
+The observed GJSD lies above the null distribution, not below it.
+Under the prespecified opposite-direction diagnostic, the observed profiles are MORE DIVERGENT than degree-preserving randomized herb-target graphs.
+This opposite-direction result must not be relabeled as confirmation of the original convergence hypothesis.
+
+7. SECONDARY CONSISTENCY
+Observed common mass = 0.7623348783 versus null mean = 0.7962485099, again indicating less convergence in the observed graph.
+Observed mean pairwise JSD = 0.0396287777 versus null mean = 0.0298288385, again indicating greater observed differentiation.
+Pairwise/cosine diagnostics are secondary and are not used to replace the frozen GJSD primary test.
+
+8. SCIENTIFIC BOUNDARY
+Phase 12A is CAP-independent. It does not establish CAP relevance, syndrome biology, treatment efficacy, therapeutic reversal, or causal mechanism.
+It specifically rejects the proposed claim that the high target-space overlap exceeds what would be expected from the exact bipartite degree structure. Instead, the exact degree structure itself tends to produce even stronger convergence, while the observed herb-target assignments retain more syndrome differentiation than that null expectation.
+
+FINAL AUDIT DECISION: PASS. Phase 12A v1.0 should be frozen without rerunning or modifying the null/statistic.

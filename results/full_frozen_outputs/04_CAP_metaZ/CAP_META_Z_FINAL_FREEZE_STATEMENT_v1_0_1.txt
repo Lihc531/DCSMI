@@ -1,0 +1,125 @@
+CAP TRANSCRIPTOMIC META-Z v1.0.1 — FINAL DISEASE-LAYER FREEZE
+Audited: 2026-09-21
+
+STATUS
+------
+PRIMARY CONTINUOUS CAP DISEASE REPRESENTATION: GO / FROZEN
+DIRECTION-CONSISTENT META-FDR MODULE: FROZEN AS DESCRIPTIVE/ENRICHMENT MODULE
+STRICT REPLICATED DEG MODULE: FROZEN AS SENSITIVITY ONLY
+
+INPUTS
+------
+GSE103119 current primary gene-level file SHA256:
+e08afc9786b9d89ab402028a2f80f4e99169bd86392156cad4e4ad7c6b1e4490
+
+GSE196399 current primary gene-level file SHA256:
+997f4d62ac4d6229c32b1f1eeda2db0f79f33335c9310821e854ff07efca33a2
+
+Contrast orientation:
+CAP minus healthy control in both cohorts.
+
+PRIMARY GENE UNIVERSE
+---------------------
+Intersection of valid unique gene symbols in the two frozen current gene-level
+files: 12,083 genes.
+
+PER-COHORT STATISTIC
+--------------------
+Z_i = sign(logFC_i) * Phi^(-1)(1 - P_i/2)
+
+PRIMARY META-ANALYSIS
+---------------------
+Equal-weight Stouffer:
+Z_CAP,g = (Z_GSE103119,g + Z_GSE196399,g) / sqrt(2)
+
+Primary downstream disease vector:
+CAP_CONTINUOUS_PRIMARY_equal_weight_metaZ_v1_0_1.csv
+
+Use ALL 12,083 shared genes for continuous syndrome-disease alignment.
+Do not prefilter this vector by FDR.
+
+Positive meta-Z = higher expression in CAP than healthy control.
+Negative meta-Z = lower expression in CAP than healthy control.
+This is disease direction and must not be described as therapeutic reversal.
+
+REPRODUCIBILITY
+---------------
+Cross-cohort logFC Spearman: 0.708852
+Cross-cohort logFC Pearson:  0.709579
+Cross-cohort signed-Z Spearman: 0.716382
+Direction concordance: 78.3001%
+
+Equal-weight vs effective-N weighted meta-Z Spearman: 0.999891.
+The effective-N weighted analysis remains sensitivity only.
+
+MODULES
+-------
+Meta FDR < 0.05:
+8,505 genes.
+
+Meta FDR < 0.05 AND same logFC direction in both cohorts:
+8,048 genes = 4,001 UP + 4,047 DOWN.
+This module is descriptive / enrichment-oriented and does not replace the
+continuous primary disease vector.
+
+Strict replicated-DEG sensitivity:
+both cohort FDR < 0.05;
+both |logFC| >= 1;
+same direction.
+513 genes = 360 UP + 153 DOWN.
+
+RESOLUTION OF THE HISTORICAL 684-GENE RESULT
+--------------------------------------------
+The historical 684 = 431 UP + 253 DOWN result is exactly reproducible when the
+older GSE103119 preprocessing output is combined with GSE196399.
+
+Legacy GSE103119 SHA256:
+61d0921cd8c2b8557a087a636abc7cfb2e68542509e2324baf468c61bca43d91
+Legacy GSE103119 universe: 21,602 symbols.
+Legacy shared universe with GSE196399: 13,831.
+Legacy GSE103119 strict DEGs: 1,039 = 585 UP + 454 DOWN.
+Legacy replicated overlap: 684 = 431 UP + 253 DOWN.
+
+The current frozen GSE103119 file has a different preprocessing output:
+14,827 valid unique genes; current strict DEGs:
+703 = 451 UP + 252 DOWN.
+With the frozen GSE196399 file this yields:
+513 = 360 UP + 153 DOWN.
+
+Therefore 13,831 and 684 belong to the same legacy GSE103119 preprocessing
+branch and must not be mixed with the frozen 12,083-gene meta-Z analysis.
+They may be mentioned only as legacy/sensitivity provenance if needed.
+
+INDEPENDENT NUMERICAL AUDIT
+---------------------------
+The signed cohort Z values, equal-weight Stouffer Z values, meta P values, and
+BH-FDR values were independently recomputed from the frozen current inputs and
+matched the exported values to floating-point precision (~1e-15 to 1e-16).
+
+FROZEN OUTPUT SHA256
+--------------------
+CAP_CONTINUOUS_PRIMARY_equal_weight_metaZ_v1_0_1.csv
+168d9a23c06df388b69f73d92b2e7811b1f5332dfb507893511367fd752be58e
+
+CAP_metaZ_all_shared_genes_v1_0_1.csv
+cccb14e83fef3ac7dcd7abb480c16ff46d9214b3200dfb173cc04202eb5d16cc
+
+CAP_metaZ_reproducibility_summary_v1_0_1.csv
+f944aea5df3df64e4bbbf384a738a2d4d191433d5d67157dbaafd1ce148f9172
+
+CAP_transcriptomic_metaZ_run_metadata_v1_0_1.json
+b32422108b4d203cae349ef44aad0821c6bd1cab712c4f6e72d0baa17bcaaac6
+
+FREEZE POLICY
+-------------
+1. Do not alter cohort direction, signed-Z conversion, shared-gene universe,
+   Stouffer weighting, or FDR rule after inspecting syndrome alignment.
+2. Do not replace the primary continuous vector with a DEG-thresholded vector.
+3. Effective-N weighted Stouffer is sensitivity only.
+4. The 8,048-gene direction-consistent module is for descriptive/set-based
+   analyses and enrichment, not the primary continuous alignment statistic.
+5. The 513-gene strict replicated DEG set is sensitivity/legacy-continuity only.
+6. Any future change requires a new disease-layer version and must not overwrite
+   v1.0.1.
+7. Downstream observed and matched-null syndrome-disease analyses must use the
+   same frozen alignment statistic.

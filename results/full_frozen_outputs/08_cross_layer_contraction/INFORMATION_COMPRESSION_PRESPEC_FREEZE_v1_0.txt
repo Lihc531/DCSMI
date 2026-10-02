@@ -1,0 +1,50 @@
+DCSMI / treatment-knowledge information-compression analysis v1.0
+STATUS: FROZEN BEFORE CROSS-LAYER RESULTS
+Freeze date: 2026-09-27
+
+PURPOSE
+Quantify whether syndrome-discriminative information contracts across the pre-existing herb -> target -> function projection hierarchy. This is a manuscript-decision analysis, not a rescue analysis and not evidence of patient mechanism.
+
+INPUTS
+1. Frozen LOPO herb coefficients and exact herb-target graph from target_projection_v1.1 / Phase12A.
+2. Frozen LOPO complete target profiles (374 targets).
+3. GO-BP and KEGG annotation snapshots already frozen/executed in bias-aware functional characterization v1.0.
+No patient omics, CAP result, psoriasis result, or URTI result enters the representation or statistic.
+
+PRIMARY CROSS-LAYER DISCRIMINATION METRIC
+At every layer, each syndrome vector is L1-normalized to a probability distribution over that layer's common feature universe. Discrimination is generalized Jensen-Shannon divergence (GJSD, log base 2) among PDOL, PHOL, WHIL:
+D_L = mean_s KL2(P_s,L || mean_s P_s,L).
+The identical bounded divergence is used at every layer.
+
+LAYERS
+H: herb layer = frozen positive LOPO primary_weight_W over union of frozen target-database herbs; absent herbs receive zero.
+T: target layer = frozen LOPO ubiquity-corrected complete target profiles over all 374 targets.
+F_GO: GO-BP layer = pathway-mass vector Q_s,p=sum_g w_s,g I(g in p), using exactly the 1,560 primary-eligible GO-BP terms from functional-characterization v1.0; Q is L1-normalized across eligible terms solely to define the cross-layer representation.
+F_KEGG: KEGG layer defined identically using exactly the 207 primary-eligible KEGG pathways.
+
+PRIMARY RETENTION SUMMARIES
+R_T|H = D_T / D_H.
+R_GO|T = D_GO / D_T.
+R_KEGG|T = D_KEGG / D_T.
+Cumulative R_GO|H = D_GO / D_H; R_KEGG|H = D_KEGG / D_H.
+These ratios are descriptive effect-size summaries. No claim of Shannon-channel information or causal information loss is allowed.
+
+PRIMARY STRUCTURAL NULL
+Use the already prespecified exact bipartite Curveball null from Phase12A: 10,000 retained graphs, four chains, master seed 20260922, 100 trades/herb burn-in and 5 trades/herb thinning. Every herb degree, target degree, total edge count, and simple bipartite status are exactly preserved. Frozen syndrome herb weights are held fixed. Each randomized graph is projected with the same degree-normalized + target-IDF formula to obtain target profiles, then projected to the same frozen GO-BP and KEGG membership matrices.
+
+NULL QUESTIONS
+1. Is observed D_T greater than degree-structure expectation? Upper-tail empirical P (already Phase12A diagnostic; independently reproduced here).
+2. Is observed D_GO or D_KEGG greater than the corresponding function-level structural-null expectation? Upper-tail empirical P.
+3. Cross-layer contraction is called STRUCTURALLY CALIBRATED only if D_H > D_T > D_F in the observed hierarchy AND the functional layer does not regain discrimination beyond its structural null. GO and KEGG are parallel triangulation families; no multiplicity rescue is permitted.
+
+INTERPRETATION
+Allowed: projection-associated contraction of syndrome discrimination; retention of target-space differentiation; loss of functional specificity; many-to-many/topology-consistent compression.
+Not allowed: mutual information, causal information loss, proof that TCM syndromes lack biology, or patient-level mechanism.
+
+DECISION RULE FOR MANUSCRIPT
+GO: If a clear monotonic contraction H>T>F is observed in both GO and KEGG (or one family with the other directionally concordant) and exact structural-null results provide a coherent topology-aware explanation, the information-compression/evidence-calibration framework may be the manuscript's central methodological phenomenon.
+PIVOT: If contraction is inconsistent across GO/KEGG or strongly metric-dependent, do not center the paper on information compression; retain structural-bias + prospective falsification as a case-study methodological paper.
+STOP: If cross-layer discrimination does not contract in a coherent way and no additional method-level phenomenon emerges, do not expand the current project with further enrichment/disease rescue analyses.
+
+ANTI-RESCUE
+No changing feature eligibility, weights, GJSD, null model, null direction, annotation family, or target projection after observing results. Any alternative metric is exploratory v1.1+.

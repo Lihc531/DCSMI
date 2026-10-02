@@ -1,0 +1,7 @@
+{
+  "validation_context": "Psoriasis, Tier-B disease background GSE147339; syndrome-labelled evaluation GSE192867",
+  "O_recompute_max_abs_difference_vs_frozen": 1.1102230246251565e-16,
+  "primary_result": "NOT_SUPPORTED_IN_THIS_DISEASE_CONTEXT",
+  "interpretation": "All three psoriasis syndrome pairs failed P1 after structural-null testing/Holm; no P2 bootstrap CI was entirely above zero; no P3 test survived Holm. Under the frozen prespecification, psoriasis therefore does not provide a positive proof-of-concept context for DCSMI v1.0.",
+  "scope": "This single negative disease context does not by itself establish the global 'not externally validated' status, which is frozen to depend on all predeclared primary validation disease contexts. It does falsify support in the psoriasis context and cannot be rescued by secondary analyses."
+}

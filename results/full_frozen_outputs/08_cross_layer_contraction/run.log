@@ -1,0 +1,27 @@
+chain 1 done
+chain 2 done
+chain 3 done
+chain 4 done
+{
+  "decision": "PIVOT_INCONSISTENT_OR_PARTIAL_CONTRACTION",
+  "observed": {
+    "herb_gjsd": 0.551417955357604,
+    "target_gjsd": 0.052760350091804444,
+    "go_gjsd": 0.004218626519704358,
+    "kegg_gjsd": 0.006016201258850363,
+    "target_retention_vs_herb": 0.09568123340776681,
+    "go_retention_vs_target": 0.07995827382426071,
+    "kegg_retention_vs_target": 0.11402883506993432
+  },
+  "monotonic": {
+    "GO": true,
+    "KEGG": true
+  },
+  "structural_null_upper_p": {
+    "target": 0.0028997100289971,
+    "GO": 0.08949105089491051,
+    "KEGG": 0.023297670232976703
+  },
+  "target_reconstruction_max_abs_error": 1.27675647831893e-15,
+  "interpretation_limit": "projection-associated contraction of syndrome discrimination; not mutual information and not proof of absent patient biology"
+}

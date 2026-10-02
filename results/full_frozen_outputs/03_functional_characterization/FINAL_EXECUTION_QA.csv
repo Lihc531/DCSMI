@@ -1,0 +1,9 @@
+check,result,detail
+frozen_complete_profile_reconstruction,PASS,Existing frozen QA max abs errors ~9.9e-17 to 1.25e-16 for PDOL/PHOL/WHIL
+target_universe,PASS,374 targets
+matched_strata,PASS,19 strata
+GO_annotation_coverage,PASS,367/374 targets direct BP annotations before ancestor propagation
+KEGG_symbol_entrez_mapping,PASS,373/374 exact unique SYMBOL->ENTREZ mappings
+KEGG_pathway_coverage,PASS,338/374 targets occur in >=1 KEGG human pathway
+deterministic_rerun_primary_outputs,PASS,Two consecutive reruns identical SHA256 after deterministic term-ID sorting; math/statistics unchanged
+anti_rescue,PASS,No background/cutoff/null/FDR/weight/database switch after results

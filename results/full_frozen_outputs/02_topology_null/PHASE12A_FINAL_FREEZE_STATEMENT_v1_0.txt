@@ -1,0 +1,40 @@
+PHASE 12A — DEGREE-PRESERVING HERB–TARGET CONVERGENCE NULL v1.0
+FINAL FREEZE STATEMENT
+Freeze date: 2026-09-22
+Status: FINAL / CLOSED / FROZEN
+
+FROZEN QUESTION
+Does the convergence of the three LOPO ubiquity-corrected syndrome target profiles exceed what is expected solely from the exact herb- and target-degree structure of the frozen TCM-ID bipartite graph?
+
+FROZEN PRIMARY TEST
+Primary statistic: generalized Jensen-Shannon divergence (GJSD; log base 2).
+Direction: lower GJSD = greater convergence.
+Primary alternative: observed GJSD lower than the exact degree-preserving null.
+Null: Curveball randomization of the full 172-herb x 374-target graph, preserving every herb degree, every target degree, and all 13,285 edges.
+N null graphs: 10,000, 4 chains x 2,500.
+
+FINAL PRIMARY RESULT
+Observed GJSD = 0.0527603500918
+Null mean = 0.0401465307726
+Null SD = 0.00333729990673
+Z vs null = +3.77964812025
+Primary lower-tail empirical P = 0.997200279972
+
+FINAL INTERPRETATION
+The prespecified extra-convergence hypothesis is NOT supported.
+Observed syndrome target profiles are not more convergent than expected from exact bipartite degree structure. They are instead more divergent than the degree-preserving null expectation (diagnostic upper-tail P=0.002899710029; diagnostic two-sided P=0.005799420058).
+Common-mass and mean-pairwise-JSD diagnostics point in the same direction.
+
+SCIENTIFIC CONSEQUENCE
+The high absolute overlap among the three observed syndrome target profiles must not be interpreted as evidence for a shared molecular architecture beyond database topology. Exact herb/target degree structure alone generates even stronger convergence under random reassignment. The observed herb-target assignments retain additional syndrome differentiation relative to that structural null.
+This result does not address whether any shared component is CAP-associated; that is a separate disease-context question for a separately prespecified downstream analysis.
+
+FROZEN POLICY
+1. Do not alter the Phase 12A null model, GJSD primary statistic, test direction, randomization parameters, or upstream representation after seeing this result.
+2. Do not relabel the opposite-direction diagnostic as support for the original convergence hypothesis.
+3. Do not claim that Phase 12A validates a CAP shared disease backbone.
+4. Phase 12A may be used to motivate a refined model: substantial absolute target overlap coexists with herb-target assignments that preserve more syndrome differentiation than expected from degree structure alone.
+5. Any alternative null or convergence statistic requires a new version and must be justified independently of the present result.
+6. Phase 12B/C must be prespecified separately and may not retroactively modify Phase 12A.
+
+PHASE 12A v1.0 IS CLOSED AND FROZEN.

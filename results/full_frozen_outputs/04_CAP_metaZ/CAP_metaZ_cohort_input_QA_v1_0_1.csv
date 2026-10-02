@@ -1,0 +1,3 @@
+﻿cohort,input_file,input_sha256,detected_gene_column,rows_input,valid_unique_genes,direction_multiplier,min_p_value,max_abs_signed_z,t_logFC_sign_agreement
+GSE103119,E:\00project\Tanre Yongfei\重构\GSE103119_gene_level_all.csv,e08afc9786b9d89ab402028a2f80f4e99169bd86392156cad4e4ad7c6b1e4490,SYMBOL,14827,14827,1,9.04688149300821e-19,8.84630003944535,1.0
+GSE196399,E:\00project\Tanre Yongfei\重构\GSE196399_gene_level_all.csv,997f4d62ac4d6229c32b1f1eeda2db0f79f33335c9310821e854ff07efca33a2,SYMBOL,16596,16596,1,1.25636636373632e-24,10.244218058489238,1.0

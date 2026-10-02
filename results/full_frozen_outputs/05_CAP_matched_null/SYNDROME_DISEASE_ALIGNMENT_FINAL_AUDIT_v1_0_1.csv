@@ -1,0 +1,16 @@
+﻿audit_item,status,detail
+zip_integrity,PASS,14 expected output files extracted successfully
+frozen_input_hashes,PASS,"All 5 upstream SHA256 values match the frozen target, CAP, STRING, and RWR inputs"
+target_universe,PASS,374 frozen TCM-ID target-database genes
+CAP_universe,PASS,"12,083 frozen continuous CAP meta-Z genes"
+STRING_network,PASS,"16,194 nodes; 236,837 frozen high-confidence edges"
+matched_strata,PASS,19 strata; degree and target-ubiquity ties are never split
+NO_STRING_policy,PASS,7 non-STRING targets remain stratified by target-ubiquity; KDM4E is singleton NO_STRING_U4
+weight_invariants,PASS,Per-syndrome complete-universe weights sum to 1; stratum positive/zero counts and stratum mass are preserved by construction
+null_replicates,PASS,"10,000 finite replicates per syndrome; random seed 20260921"
+empirical_p_recalculation,PASS,All syndrome-level upper/lower/two-sided P values reproduce exactly from the saved full null distribution
+paired_null_recalculation,PASS,All paired syndrome-difference null statistics reproduce exactly
+raw_contribution_recalculation,PASS,Gene-level contributions sum to the reported observed raw alignment for all 3 syndromes
+RWR_adjoint_crosscheck,PASS,Maximum observed alignment discrepancy 1.407e-13
+primary_result,PASS,No syndrome shows positive CAP alignment beyond the matched target-background null
+RWR_secondary_result,PASS,Secondary RWR localization gives the same qualitative conclusion

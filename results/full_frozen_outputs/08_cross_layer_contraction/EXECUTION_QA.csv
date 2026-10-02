@@ -1,0 +1,7 @@
+metric,value,status
+target_reconstruction_max_abs_error,1.27675647831893e-15,PASS
+herb_count,172.0,PASS
+target_count,374.0,PASS
+go_terms,1560.0,PASS
+kegg_terms,207.0,PASS
+null_n,10000.0,PASS

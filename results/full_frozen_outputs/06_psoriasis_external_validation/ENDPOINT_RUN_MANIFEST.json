@@ -1,0 +1,17 @@
+{
+  "seed": 20260922,
+  "N_null": 10000,
+  "N_boot": 2000,
+  "n_targets": 374,
+  "n_strata": 19,
+  "n_hallmarks": 50,
+  "inputs_sha256": {
+    "prior": "1f06bd65872248eefc0186697c6d1388ea2847a6ed85a716bb7c191761092e0b",
+    "strata": "a3871d4da3b3f4005833875f4e8d7c11e529214f6f93a95255f5acc5fffef297",
+    "hallmark": "b79e465ab414067ee911319e846a1a2a3b06bcc389e48fd7f39894724b3e7ac5",
+    "disease": "420ee055777de3007cb7d8f7f4be13e9974b2c7aa4aaa539c404b24f7fd3f1bb",
+    "series": "52cfc0ad8604a711fc7b2814a4903f3163866f918f29bb8f1b1965c958e62b13",
+    "sample_manifest": "dd2e2444968cd3f6f31241ea7c2061ddab60fac6732aee4f99960fd03850fcb7",
+    "annotation": "1dfd05d8fe4bdd3b91ef9f5b37c8d38d66d31b68d215b3362153512a62366144"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "analysis_name": "Weighted Herb-Target Projection v1.1 FROZEN",
+  "created_utc": "2026-09-21T17:54:31+00:00",
+  "status": "FROZEN_UPSTREAM_BEFORE_CAP_ALIGNMENT",
+  "inputs": {
+    "FULL_weights": "/mnt/data/freeze_check/FULL_syndrome_herb_weights_observed_v1_0.csv",
+    "FULL_weights_sha256": "e13f2565830bef64926d1807ad7341659017af5b67d3aa1aeffc568ac8a17667",
+    "LOPO_weights": "/mnt/data/freeze_check/LOPO_syndrome_herb_weights_observed_v1_0.csv",
+    "LOPO_weights_sha256": "4470442be38c5a7c92f191f790ee9d2d5799b707e8526b2f0d7239f7eec84d11",
+    "herb_target_file": "/mnt/data/tcmid05b_latest/HERB_TARGET_LONG_TABLE_TCMID_web_completed_v1_0.xlsx",
+    "herb_target_sha256": "cb91f4fbb95601de2d7d3054760e54a247a2b1bec0bd8251d53bea627be57d62",
+    "herb_target_sheet": "targets_long",
+    "detected_herb_column": "Herb_ChineseName",
+    "detected_target_column": "Gene_Symbol"
+  },
+  "projection_methods": {
+    "binary_union": "1 if any mapped syndrome herb links to target",
+    "weighted_raw": "sum_h W_hs * A_ht",
+    "herb_degree_normalized": "sum_h W_hs * A_ht / |T_h|",
+    "ubiquity_corrected": "sum_h W_hs * (A_ht / |T_h|) * [log((N_H+1)/(n_t+1))+1]"
+  },
+  "frozen_primary_for_next_RWR": "LOPO ubiquity_corrected_sum1",
+  "freeze_version": "v1.1",
+  "idf_reference_universe": "study_target_database_herbs_with_at_least_one_valid_target",
+  "processed_form_parent_map": {
+    "制陈皮": "陈皮",
+    "炙百部": "百部",
+    "焦山楂": "山楂"
+  },
+  "important_note": "This projection is frozen upstream before CAP alignment. Do not alter mappings, IDF universe, projection formula, or primary method in response to downstream CAP results; create a new version for any future methodological change.",
+  "CAP_transcriptomics_used": false,
+  "GAT_used": false,
+  "target_database_unique_herbs": 172,
+  "target_database_unique_targets": 374,
+  "target_database_unique_pairs": 13285,
+  "target_database_universe_definition": "study_target_database_herbs_with_at_least_one_valid_target",
+  "processed_form_parent_aliases_do_not_expand_idf_universe": true,
+  "max_degree_normalization_mass_error": 1.1102230246251565e-16,
+  "uppercase_target_ids": true,
+  "min_targets_per_herb": 1,
+  "max_targets_per_herb": null,
+  "top_k_values": [
+    50,
+    100,
+    200
+  ]
+}
