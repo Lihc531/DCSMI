@@ -1,39 +1,13 @@
-DCSMI GitHub Repository v1.4 - package construction QA
-Date: 2026-10-02
+DCSMI GitHub Repository v1.4.1 - release cleanup QA
 
-1. Python syntax compilation
-   37 Python files under scripts/: PASS
-   Failures: 0
+Package root: DCSMI_GitHub_Repository_v1_4_1
+Maintenance scope: provenance/license/release metadata and generated-artifact cleanup only.
+Scientific code/results changed: NO
+Python source syntax checks: 52/52 PASS
+Generated .pyc files present: 0
+__pycache__ directories present: 0
+PORTABILITY_ADAPTATIONS rows: 10
+PORTABILITY_ADAPTATIONS build-machine /mnt/data paths: 0
+License file: MIT (project-authored code and associated repository documentation; see LICENSE_NOTICE.md for third-party scope)
 
-2. URTI reconstructed endpoint replay
-   Status: PASS
-   Independently reconstructed fields compared with frozen endpoint table: 16/16 PASS at absolute tolerance 1e-10.
-   Maximum absolute difference: 5.551115123125783e-17.
-   Fields include n_hallmarks, Aplus_nonzero, P1 observed Spearman, P1 empirical P, syndrome-only Spearman, P2 delta, and P2 percentile CI for WH/WC.
-
-3. URTI disease-vector forensic identifiability
-   34/50 Hallmark D components identifiable from frozen Mtilde + reconstructed Aplus + frozen compatibility R.
-   16/50 remain unidentifiable because both observed syndrome Aplus profiles are zero there.
-   Cross-syndrome disagreement on overlapping identifiable D components: <= 9.08e-15.
-
-4. URTI full functional reimplementation
-   Syntax: PASS
-   Smoke execution: PASS with a compatible substitute disease gene-level input plus frozen O/P2 replay.
-   Historical-equivalence claim: NO. Exact historical GSE63990 disease input and original patient-level source matrix remain unavailable.
-
-5. Hardcoded machine paths in current runnable analysis/reconstruction scripts
-   /mnt/data paths: 0
-   Windows drive paths: 0
-   Note: scripts/data_preparation_reference contains exact historical/reference scripts and may retain original machine-specific paths by design.
-
-6. Secret-like credential scan
-   Common API-key/password/token assignment patterns: no hits in packaged repository files.
-
-7. URTI P3
-   Frozen amendment enforced in reconstructed code: NOT_IDENTIFIABLE / NOT_TESTED.
-
-8. Historical-code provenance
-   Original supplied URTI scaffold is retained unchanged under provenance/original_frozen_scripts and is not relabeled as the final endpoint generator.
-   Reconstructed scripts are stored separately and labeled as post hoc reconstruction.
-
-Final SHA256 package manifest is regenerated after this log and verified by scripts/utilities/check_repository_integrity.py.
+Final SHA256 verification is performed against provenance/SHA256SUMS.csv after manifest generation.
