@@ -1,0 +1,19 @@
+name: dcsmi-evidence-calibration
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - openpyxl
+  - requests
+  - beautifulsoup4
+  - scikit-learn
+  - r-base
+  - bioconductor-limma
+  - bioconductor-edger
+  - bioconductor-geoquery
+  - bioconductor-biobase
+  - r-dplyr

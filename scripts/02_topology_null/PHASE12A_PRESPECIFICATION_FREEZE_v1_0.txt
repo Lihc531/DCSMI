@@ -1,0 +1,124 @@
+PHASE 12A — DEGREE-PRESERVING HERB–TARGET CONVERGENCE NULL v1.0
+PRESPECIFICATION FREEZE
+Status: FROZEN_BEFORE_FULL_NULL_RESULTS
+Freeze date: 2026-09-22
+
+SCIENTIFIC QUESTION
+Does the convergence of the three frozen LOPO syndrome molecular target profiles exceed
+what is expected solely from the bipartite degree structure of the frozen TCM-ID herb–target graph?
+
+This analysis is CAP-INDEPENDENT. No CAP transcriptomic data, disease alignment score,
+RWR output, pathway enrichment result, or downstream significance result may be used to
+alter the design below.
+
+FROZEN INPUTS
+1. canonical_herb_target_pairs_v1_1.csv
+   SHA256: a6b283fe945885046b78141a94b6474d1acdef41a4ace8e941096fee95dff983
+   Frozen bipartite graph: 172 target-database herbs, 374 targets, 13,285 unique herb-target edges.
+2. FROZEN_herb_to_target_mapping_dictionary_v1_1.csv
+   SHA256: 709fac26761667242c5754e4bc7c67be047f9398aea010542e25d195eea95e66
+3. LOPO_FROZEN_primary_target_weights_for_RWR_v1_1.csv
+   SHA256: 9256cd3fe7ae142a91c7e081d97ba8a9225aa5aea3434c5f5673d53e5a10c9ef
+4. target_database_target_ubiquity_v1_1.csv
+   SHA256: 7a714cbfadd44033aabcc7178d4ff045bbc826f6cc5606705acc76fcad002bba
+
+FROZEN REPRESENTATION
+- Prescription evidence: LOPO only.
+- Syndrome codes: PDOL, PHOL, WHIL.
+- Prescription-layer canonical herb identities remain unchanged.
+- Frozen target_mapping_name is used exactly as recorded in the v1.1 mapping dictionary.
+- Multiple prescription-layer herbs mapping to the same target-database herb are retained as
+  separate observed relations but are algebraically aggregated only for projection efficiency.
+- Unmapped herbs remain unmapped and contribute no target edges.
+- Target projection is the already frozen LOPO ubiquity-corrected representation:
+    contribution(h,t,s) = W_hs / degree_h * IDF_t
+    IDF_t = log((N_H + 1)/(degree_target_t + 1)) + 1
+  followed by sum-to-one normalization within syndrome.
+- N_H = 172. Because both herb and target degrees are exactly preserved by the null,
+  herb degree normalization and target IDF values are invariant across null graphs.
+
+NULL MODEL
+- Null object: the full frozen 172 x 374 simple bipartite herb-target graph.
+- Randomization: Curveball trades on herb rows.
+- Every retained null graph must preserve EXACTLY:
+    * all 172 herb degrees,
+    * all 374 target degrees,
+    * total edge count = 13,285,
+    * simple-graph status (no duplicate herb-target edge).
+- The syndrome-herb weights, syndrome labels, frozen target mapping, target universe,
+  degree normalization, and IDF formula are NOT randomized.
+- No CAP information is used.
+
+RANDOMIZATION PARAMETERS — FROZEN
+- Total retained null graphs: 10,000.
+- Four independent chains, 2,500 retained graphs per chain.
+- Master RNG seed: 20260922; chain RNGs are deterministically spawned from this seed.
+- Each chain starts from the observed frozen graph.
+- Burn-in per chain: 100 x N_herbs = 17,200 Curveball trade attempts.
+- Thinning between retained graphs: 5 x N_herbs = 860 Curveball trade attempts.
+- These parameters may not be changed after inspecting the full-null result. If mixing QA fails,
+  v1.0 is reported as technically non-interpretable and a new version must be preregistered.
+
+PRIMARY CONVERGENCE STATISTIC — FROZEN
+Let P_s be the sum-to-one LOPO ubiquity-corrected target profile for syndrome s and
+M = (P_PDOL + P_PHOL + P_WHIL)/3.
+
+Primary statistic:
+  GJSD = (1/3) * sum_s KL_2(P_s || M)
+where KL_2 uses log base 2 and 0*log(0/q) is defined as 0.
+
+Smaller GJSD = stronger convergence.
+
+Primary hypothesis test:
+  H_A: observed GJSD is LOWER than expected under the exact degree-preserving herb-target null.
+  Empirical lower-tail P = [1 + count(GJSD_null <= GJSD_observed)] / (10,000 + 1).
+
+This is the ONLY primary inferential test for Phase 12A.
+
+SECONDARY / DIAGNOSTIC STATISTICS — FROZEN
+1. Upper-tail and two-sided empirical P for GJSD, reported diagnostically to detect departure
+   in the opposite direction; they do not replace the frozen lower-tail primary test.
+2. Common target mass:
+     C = sum_t min_s P_s(t)
+   Larger C = stronger convergence. Primary-direction diagnostic is upper-tail.
+3. Pairwise Jensen-Shannon divergences for PDOL-PHOL, PDOL-WHIL, PHOL-WHIL.
+4. Pairwise cosine similarities for the same three pairs.
+5. Mean pairwise JSD and mean pairwise cosine similarity.
+No secondary metric may replace GJSD as the primary statistic based on its result.
+
+MIXING / TECHNICAL QA — FROZEN
+- Exact row-degree preservation and exact column-degree preservation are hard requirements.
+- Observed profile reconstructed from the graph + mapping must match the frozen
+  LOPO_FROZEN_primary_target_weights_for_RWR_v1_1.csv within max absolute error <= 1e-12.
+- Four-chain scalar GJSD R-hat is reported.
+- Within-chain GJSD autocorrelation is reported at lags 1, 5, and 10.
+- Prespecified technical PASS guidance: R-hat <= 1.01 and absolute lag-1 autocorrelation <= 0.10
+  in every chain. Failure triggers technical review/new preregistered version, not parameter tuning
+  within v1.0.
+
+INTERPRETATION RULES — FROZEN
+A. If primary lower-tail empirical P < 0.05:
+   The observed syndrome target profiles are more convergent than expected from exact herb- and
+   target-degree structure alone. This supports a structured shared molecular architecture beyond
+   degree structure, but does NOT by itself establish CAP relevance or a biological mechanism.
+B. If primary lower-tail P >= 0.05:
+   Phase 12A does not support convergence beyond the degree-preserving database null.
+C. If the opposite upper-tail is small:
+   This is interpreted as evidence that the observed herb-target assignments preserve MORE
+   syndrome differentiation than degree-preserving random graphs; it must not be relabeled as
+   support for the prespecified convergence hypothesis.
+D. No result from Phase 12A proves syndrome biology, CAP specificity, treatment efficacy,
+   therapeutic reversal, or causal mechanism.
+E. Phase 12B/C designs may be motivated by the scientific framework, but Phase 12A parameters
+   and primary test may not be changed after viewing results.
+
+END OF PRESPECIFICATION FREEZE v1.0
+
+TRANSPARENCY NOTE ON IMPLEMENTATION TESTING
+Before the formal 10,000-null run, small computational benchmark/smoke-test runs were used to
+verify runtime, profile reconstruction, exact degree preservation, and chain mechanics. The
+scientific question, LOPO ubiquity-corrected representation, exact degree-preserving null,
+GJSD primary statistic, lower-tail primary direction, 10,000-null size, four-chain design,
+master seed, burn-in, thinning, and interpretation rules above were not changed in response
+to those engineering tests. Therefore this document should be described as an analysis plan
+frozen before the FORMAL 10,000-null run, not as a blinded preregistration before any code test.

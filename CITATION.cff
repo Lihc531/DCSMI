@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this code or reproducibility package, please cite the associated manuscript and this repository release."
+title: "DCSMI evidence-calibration code and reproducibility materials"
+version: "1.4.0"
+date-released: 2026-10-02
+authors:
+  - family-names: Li
+    given-names: Haochen
+  - family-names: Geng
+    given-names: Jing
+  - family-names: Wang
+    given-names: Yingying
+  - family-names: Yang
+    given-names: Xiu-An
+preferred-citation:
+  type: article
+  title: "Convergent molecular space with residual syndrome differentiation: structural calibration and evidence boundaries of treatment-knowledge-derived inference"
+  authors:
+    - family-names: Li
+      given-names: Haochen
+    - family-names: Geng
+      given-names: Jing
+    - family-names: Wang
+      given-names: Yingying
+    - family-names: Yang
+      given-names: Xiu-An
